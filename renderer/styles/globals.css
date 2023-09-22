@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+  --background: #0c0c0c;
+}
+
+/* navigation */
+.menu {color: #3f3f3f;}
+
+.menu-options {
+  display: flex;
+}
+
+.menu-options > a {
+  width: 4rem;
+  height: 4rem;
+  border-right: #3f3f3f;
+  border-width: 1px;
+}
+
+
+/* main & duplicate styles */

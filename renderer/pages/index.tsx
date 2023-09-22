@@ -1,6 +1,8 @@
 import { useEffect } from 'react'
 import Link from 'next/link'
 import Layout from '../components/Layout'
+import '../utils/notifications'
+import notification from '../utils/notifications'
 
 const IndexPage = () => {
   useEffect(() => {
@@ -19,12 +21,13 @@ const IndexPage = () => {
   }
 
   return (
-    <Layout title="Home | Next.js + TypeScript + Electron Example">
-      <h1>Hello Next.js 👋</h1>
-      <button onClick={onSayHiClick}>Say hi to electron</button>
+    <Layout title="Pinch Stack | Home">
+      <h1>Hello 👋</h1>
+      <button onClick={onSayHiClick}>Say hi</button>
       <p>
         <Link href="/about">About</Link>
       </p>
+      <button onClick={notification('a', 'b', 'c')}>no</button>
     </Layout>
   )
 }
