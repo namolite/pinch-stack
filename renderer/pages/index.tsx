@@ -1,10 +1,13 @@
-import { useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Layout from '../components/Layout'
 import '../utils/notifications'
 import notification from '../utils/notifications'
 
 const IndexPage = () => {
+  // TODO Component: some components...
+
+  // TODO Hooks: Update Infomation
   useEffect(() => {
     const handleMessage = (_event, args) => alert(args)
 

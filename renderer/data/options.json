@@ -1,0 +1,27 @@
+[
+  {
+    "id": "home",
+    "path": "/",
+    "ico": "/images/options/home.svg"
+  },
+  {
+    "id": "pinch",
+    "path": "/about",
+    "ico": "/images/options/pinch.svg"
+  },
+  {
+    "id": "message",
+    "path": "/initial-props",
+    "ico": "/images/options/message.svg"
+  },
+  {
+    "id": "schedule",
+    "path": "/initial-props",
+    "ico": "/images/options/schedule.svg"
+  },
+  {
+    "id": "document",
+    "path": "/initial-props",
+    "ico": "/images/options/document.svg"
+  }
+]

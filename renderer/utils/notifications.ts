@@ -1,9 +1,9 @@
-// TODO Notifications off
+// TODO Feature: notifications off
 const mute = () => {
   let importClientSetting: object = {}
 }
 
-// TODO Notification output function
+// TODO Feature: notification output function
 const notification = (notificationTitle: string, notificationBody: string, terminalMessage: string) => {
   return () => {
     // const tt = 'Your change has already saved'
