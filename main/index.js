@@ -16,6 +16,8 @@ electron_1.app.on('ready', async () => {
     const mainWindow = new electron_1.BrowserWindow({
         width: 1000,
         height: 750,
+        autoHideMenuBar: true,
+        // frame: false,
         webPreferences: {
             nodeIntegration: false,
             contextIsolation: false,

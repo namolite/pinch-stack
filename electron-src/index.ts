@@ -14,6 +14,8 @@ app.on('ready', async () => {
   const mainWindow = new BrowserWindow({
     width: 1000,
     height: 750,
+    autoHideMenuBar: true,
+    // frame: false,
     webPreferences: {
       nodeIntegration: false,
       contextIsolation: false,

@@ -1,7 +1,8 @@
 import React, { ReactNode } from 'react'
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import Head from 'next/head'
+
+import Meta from './meta'
 
 type Props = {
   children: ReactNode
@@ -13,14 +14,12 @@ const data = require('@Data/options.json')
 const Option = ({ props }: any) => (
   <>{props.map((props: { id: string, path: string, ico: string }) => (
     <Link key={props.id} href={props.path}>
-      <div className='flex w-full h-full left-0 bottom-0 items-center justify-center'>
+      <div className='flex w-full h-full left-0 top-0 items-center justify-center'>
         <img className='opacity-50 h-1/2' src={props.ico} />
       </div>
     </Link>
   ))}</>
 )
-
-
 
 
 const Layout = ({ children, title = 'Nya!' }: Props) => {
@@ -37,19 +36,26 @@ const Layout = ({ children, title = 'Nya!' }: Props) => {
     fetchMenuOptions()
   }, [refresh])
 
-  const handleMenuOption = () => {}
+  const handleMenuOptions = (opt) => {
+    const createOptions = ((opt) => {
+      { }
+    })(opt).then((opts) => {
+      setRefresh(oldKey => oldKey + 1)
+    })
+  }
 
   return (
     <div>
-      <Head>
-        <title>{title}</title>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-      </Head>
+      <Meta pageTitle={title}/>
       <header>
-        <nav className='menu h-12 border-b-2 text-gray-600'>
-          <div className='flex justify-between'>
-            <div className='menu-options flex absolute'>
+        <nav className='menu w-16 h-full fixed border-r-2 text-gray-600'>
+          <div className='h-full flex flex-col content-center justify-between'>
+            <div>
+              <div>
+                a
+              </div>
+            </div>
+            <div className='menu-options flex flex-col absolute'>
               <Option props={data} />
             </div>
             <div className='menu-optons'>
@@ -59,10 +65,15 @@ const Layout = ({ children, title = 'Nya!' }: Props) => {
           </div>
         </nav>
       </header>
-      {children}
+      <div className='ml-12'>
+        <div className='menu-window'></div>
+        {children}
+      </div>
       <footer>
-        <hr />
-        <span>I'm here to stay (Footer)</span>
+        <div className='right-0 fixed'>
+          <hr />
+          <span>I'm here to stay ❤ (Footer)</span>
+        </div>
       </footer>
     </div>
   )
