@@ -48,7 +48,7 @@ const Layout = ({ children, title = 'Nya!' }: Props) => {
     <div>
       <Meta pageTitle={title}/>
       <header>
-        <nav className='menu w-16 h-full fixed border-r-2 text-gray-600'>
+        <nav className='menu w-12 h-full fixed border-r-2 text-gray-600'>
           <div className='h-full flex flex-col content-center justify-between'>
             <div>
               <div>
