@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 
+import BlockContent from '@Components/workbench/blockContent'
+import BlockSplit from '@Components/workbench/blockSplit'
+
 import notification from '@Utils/notifications'
 
 const IndexInner = () => {
@@ -21,15 +24,9 @@ const IndexInner = () => {
 
   return (
     <>
-      <h1>Dashboard</h1>
-      <h2>Dashboard</h2>
-      <h3>Dashboard</h3>
-      <h4>Dashboard</h4>
-      <h5>Dashboard</h5>
-      <h6>Dashboard</h6>
+      <h1>Dashboard</h1><h2>Dashboard</h2><h3>Dashboard</h3><h4>Dashboard</h4><h5>Dashboard</h5><h6>Dashboard</h6>
       <br />
-      <p>{'<p>test plain text</p>'}</p>
-      <span>{'<span>test plain text</span>'}</span>
+      <p>{'<p>test plain text</p>'}</p><span>{'<span>test plain text</span>'}</span>
       <p>word break: The longest word in any of the major English language dictionaries is pneumonoultramicroscopicsilicovolcanoconiosis, a word that refers to a lung disease contracted from the inhalation of very fine silica particles, specifically from a volcano; medically, it is the same as silicosis.</p>
       <br />
       <button onClick={onMessageClick}>👉button👈</button>
@@ -37,6 +34,13 @@ const IndexInner = () => {
       <Link href="/about">link</Link>
       <br />
       <button onClick={notification('a', 'b', 'c')}>notification</button>
+      <div className='flex block-3'>
+        <BlockContent />
+        <BlockSplit />
+        <BlockContent />
+        <BlockSplit />
+        <BlockContent />
+      </div>
     </>
   )
 }

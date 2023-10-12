@@ -14,7 +14,7 @@ const IndexPage = () => {
     <Layout title="Pinch Stack | Home">
       <div className='flex w-full justify-center'>
         <div className='w-full px-12'>
-        <IndexInner />
+          <IndexInner />
         </div>
       </div>
     </Layout>

@@ -68,3 +68,15 @@ h6 { font-size: 1.1rem }
   font-size: .7rem;
   color: var(--font-discription);
 }
+
+
+/* workbench */
+.block {
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.block-col-1 { width: 100% }
+.block-col-2 { width: 50% - 1rem }
+.block-col-3 { width: calc((100% - 4rem) * .29667) }
+.block-3 :nth-of-type(3) { width: calc((100% - 4rem) * .40667) }
