@@ -1,20 +1,26 @@
 import Image from "next/image"
 
-export default function BlockImage({ props }: any) {
-  interface props{
-    width: number,
-    height: number,
-    src: string,
-    alt: string
-  }
+type Props = {
+  content: Content,
+  style: any
+}
+
+interface Content {
+  width: number,
+  height: number,
+  src: string,
+  alt: string
+}
+
+export default function BlockImage({ content, style }: Props) {
 
   return(
     <div>
       <Image
-        width={props.width}
-        height={props.height}
-        src={props.src}
-        alt={props.alt}
+        width={content.width}
+        height={content.height}
+        src={content.src}
+        alt={content.alt}
       />
     </div>
   )

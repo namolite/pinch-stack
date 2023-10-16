@@ -2,39 +2,28 @@ import React, { ReactNode } from 'react'
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 
-import Meta from './meta'
+import Meta from '@Components/meta'
+import Option from '@Components/layout/Option'
 
 type Props = {
   children: ReactNode
   title?: string
 }
 
-const data = require('@Data/options.json')
-
-const Option = ({ props }: any) => (
-  <>{props.map((props: { id: string, path: string, ico: string }) => (
-    <Link key={props.id} href={props.path}>
-      <div className='flex w-full h-full left-0 top-0 items-center justify-center'>
-        <img className='opacity-50 h-1/2' src={props.ico} />
-      </div>
-    </Link>
-  ))}</>
-)
-
 
 const Layout = ({ children, title = 'Nya!' }: Props) => {
-  const [datam, setDatam] = useState([])
+  const [data, setData] = useState([])
   const [refresh, setRefresh] = useState(0)
 
   useEffect(() => {
     async function fetchMenuOptions() {
-      const menuOptions = await []
-      setDatam(menuOptions)
-      // DEBUG
-      console.log(menuOptions)
+      const menuOptions = await getMenuOptions()
+      setData(menuOptions)
     }
     fetchMenuOptions()
   }, [refresh])
+
+  const getMenuOptions = () => require('@Data/options.json')
 
   const handleMenuOptions = (opt) => {
     const createOptions = ((opt) => {
