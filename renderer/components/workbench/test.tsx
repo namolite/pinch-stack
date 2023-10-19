@@ -4,6 +4,9 @@ import Link from 'next/link'
 import BlockContent from '@Components/workbench/blockContent'
 import BlockSplit from '@Components/workbench/blockSplit'
 
+import BlockImage from "@Components/workbench/blocks/image"
+import BlockText from "@Components/workbench/blocks/text"
+
 import notification from '@Utils/notifications'
 
 const IndexInner = () => {
@@ -19,8 +22,13 @@ const IndexInner = () => {
   }, [])
 
   const onMessageClick = () => {
-    global.ipcRenderer.send('message', 'hi from next')
+    global.ipcRenderer.send('message', 'Here we go!')
   }
+
+  const dummyData = [
+    {'type': BlockText, 'content': ['dadasdasd', 'sfsdfsdfsfs', 'sffsdfsdfsf'], 'style': {'background': 1}},
+    {'type': BlockImage, 'content': {'width': 100, 'height': 100, 'src': '/images/test_1.jpg', 'alt': '嘤嘤嘤'}, 'style': {'background': 1}}
+  ]
 
   return (
     <>
@@ -33,9 +41,9 @@ const IndexInner = () => {
       <br />
       <Link href="/about">link</Link>
       <br />
-      <button onClick={notification('a', 'b', 'c')}>notification</button>
+      <button onClick={notification('Title', 'Text', 'Terminal output')}>notification</button>
       <div className='flex block-3'>
-        <BlockContent />
+        <BlockContent props={dummyData} />
         <BlockSplit />
         <BlockContent />
         <BlockSplit />

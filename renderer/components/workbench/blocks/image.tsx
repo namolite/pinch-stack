@@ -1,7 +1,8 @@
 import Image from "next/image"
 
 type Props = {
-  content: Content,
+  key: string
+  contents: Content,
   style: any
 }
 
@@ -12,15 +13,17 @@ interface Content {
   alt: string
 }
 
-export default function BlockImage({ content, style }: Props) {
+export default function BlockImage({ contents, style }: Props) {
+// TODO Feature: Styling Components...
+  
 
   return(
     <div>
       <Image
-        width={content.width}
-        height={content.height}
-        src={content.src}
-        alt={content.alt}
+        width={contents.width}
+        height={contents.height}
+        src={contents.src}
+        alt={contents.alt}
       />
     </div>
   )

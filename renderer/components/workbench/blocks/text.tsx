@@ -1,8 +1,16 @@
-export default function BlockText({ props, style }: any) {
+import { ReactElement } from "react"
+
+type Props =  {
+  key: ReactElement | null
+  contents: string[],
+  style: any
+}
+
+export default function BlockText({ contents, style }: Props) {
   console.log(style)
   return (
     <div className="m-2 rounded">{
-      props.map((text: string) => {
+      contents.map((text: string) => {
         return (<p key={text}>{text}</p>)
       })
     }</div>
