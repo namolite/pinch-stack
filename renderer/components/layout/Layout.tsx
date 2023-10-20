@@ -11,7 +11,7 @@ type Props = {
 }
 
 
-const Layout = ({ children, title = 'Nya!' }: Props) => {
+const Layout = ({ children }: Props) => {
   const [data, setData] = useState([])
   const [refresh, setRefresh] = useState(0)
 
@@ -23,6 +23,7 @@ const Layout = ({ children, title = 'Nya!' }: Props) => {
     fetchMenuOptions()
   }, [refresh])
 
+  // BUG hard coded
   const getMenuOptions = () => require('@Data/options.json')
 
   const handleMenuOptions = (opt) => {
@@ -35,7 +36,7 @@ const Layout = ({ children, title = 'Nya!' }: Props) => {
 
   return (
     <div>
-      <Meta pageTitle={title}/>
+      <Meta />
       <header>
         <nav className='menu w-12 h-full fixed border-r-2 text-gray-600'>
           <div className='h-full flex flex-col content-center justify-between'>

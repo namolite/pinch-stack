@@ -6,7 +6,7 @@
   },
   {
     "id": "pinch",
-    "path": "/about",
+    "path": "/pinch",
     "ico": "/images/options/pinch.svg"
   },
   {
@@ -16,7 +16,7 @@
   },
   {
     "id": "schedule",
-    "path": "/initial-props",
+    "path": "/about",
     "ico": "/images/options/schedule.svg"
   },
   {

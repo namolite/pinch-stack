@@ -7,7 +7,11 @@ type Props =  {
 }
 
 export default function BlockText({ contents, style }: Props) {
+  // TODO Feature: Styling Components...
+
+  // DEBUG
   console.log(style)
+
   return (
     <div className="m-2 rounded">{
       contents.map((text: string) => {

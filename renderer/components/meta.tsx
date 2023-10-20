@@ -7,14 +7,13 @@ interface Props {
   desc: string;
 }
 
-const Meta = ({ pageTitle }: any) => {
+const Meta = () => {
   return (
     <>
       <Head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <link rel="icon" href="images/i.ico" />
-        <title>{`${pageTitle}`}</title>
         <link rel="icon" href="f.svg" sizes="any" />
         <meta name="description" content="♥" />
       </Head>

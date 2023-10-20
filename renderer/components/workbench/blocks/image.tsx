@@ -14,8 +14,7 @@ interface Content {
 }
 
 export default function BlockImage({ contents, style }: Props) {
-// TODO Feature: Styling Components...
-  
+  // TODO Feature: Styling Components...
 
   return(
     <div>

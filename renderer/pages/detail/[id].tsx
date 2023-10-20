@@ -1,5 +1,5 @@
 // import { NextPageContext } from 'next'
-import Layout from '../../components/Layout'
+import Layout from '../../components/layout/Layout'
 import { User } from '../../interfaces'
 import { findAll, findData } from '../../utils/sample-api'
 import ListDetail from '../../components/ListDetail'
