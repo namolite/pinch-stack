@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 
-import Title from '@Components/title'
+import CustomTitle from '@Components/title'
 import IndexInner from '@Components/workbench/test'
 
 const IndexPage = () => {
   // BUG hard coded
-  const customTitle = 'pinch! ~/Workbench/'
+  const customTitle = 'pinch! dev mode ~/Workbench/'
   // TODO Component: Workbench 
 
   // TODO Hooks: useFetchData: Update Data
@@ -14,7 +14,7 @@ const IndexPage = () => {
 
   return (
     <div className='flex w-full justify-center'>
-      <Title customTitle={customTitle} />
+      <CustomTitle customTitle={customTitle} />
       <div className='w-full px-12'>
         <IndexInner />
       </div>

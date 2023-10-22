@@ -4,12 +4,11 @@ import PinchItem from "@Components/pinch/pinchItems";
 
 
 const PinchTable = ({ props }: any) => {
-  return(
-    <>
-      <div>
-        <PinchItem />
-      </div>
-    </>
+  console.log(props)
+  return (
+    <div>
+      {props?.map((props) => <PinchItem props={props} /> )}
+    </div>
   )
 }
 

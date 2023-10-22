@@ -25,6 +25,7 @@ const Layout = ({ children }: Props) => {
 
   // BUG hard coded
   const getMenuOptions = () => require('@Data/options.json')
+  const usr = require('@Data/options_usr.json')
 
   const handleMenuOptions = (opt) => {
     const createOptions = ((opt) => {
@@ -38,7 +39,7 @@ const Layout = ({ children }: Props) => {
     <div>
       <Meta />
       <header>
-        <nav className='menu w-12 h-full fixed border-r-2 text-gray-600'>
+        <nav className='menu w-14 h-full fixed border-r text-gray-600'>
           <div className='h-full flex flex-col content-center justify-between'>
             <div>
               <div>
@@ -48,14 +49,14 @@ const Layout = ({ children }: Props) => {
             <div className='menu-options flex flex-col absolute'>
               <Option props={data} />
             </div>
-            <div className='menu-optons'>
-              <Link href="/initial-props">Personal</Link>
+            <div className='menu-optons flex flex-col pb-6'>
+              <Option props={usr} />
               <div></div>
             </div>
           </div>
         </nav>
       </header>
-      <div className='ml-12'>
+      <div className='ml-14'>
         <div className='menu-window'></div>
         {children}
       </div>

@@ -4,7 +4,7 @@
 
 
 :root {
-  --menu-background: #353535;
+  --menu-background: #5e5e5e;
   --menu-item-colour: #fff;
   --menu-window-colour: #fff;
   --background: #d2d2d2;
@@ -16,19 +16,28 @@
 }
 
 /* navigation */
-.menu {color: #3f3f3f;}
+.menu {background-color: #3f3f3f;}
 
 .menu-options {
   display: flex;
   position: relative;
+  padding-bottom: 3rem;
 }
 
 .menu-options > a {
-  width: 3rem;
-  height: 3rem;
-  border-right: #3f3f3f;
-  border-width: 1px;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-right: rgba(0, 0, 0, 0);
+  border-width: 0px;
   position: relative;
+}
+
+.menu-ico {
+  width: 1.5rem;
+  height: 1.5rem;
+  filter: invert(100%);
+  -webkit-filter: invert(100%);
+  opacity: .6;
 }
 
 .menu-window {
@@ -38,6 +47,9 @@
 
 
 /* main & duplicate styles */
+html {
+  user-select: none;
+}
 
 
 /* text styles */
