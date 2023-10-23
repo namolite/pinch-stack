@@ -2,9 +2,11 @@ import React from "react";
 
 import PinchItem from "@Components/pinch/pinchItems";
 
+import debug from "@Utils/debug";
+
 
 const PinchTable = ({ props }: any) => {
-  console.log(props)
+  debug.log(props)
   return (
     <div>
       {props?.map((props) => <PinchItem props={props} /> )}

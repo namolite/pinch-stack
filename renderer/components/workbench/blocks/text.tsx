@@ -1,5 +1,7 @@
 import { ReactElement } from "react"
 
+import debug from "@Utils/debug"
+
 type Props =  {
   key: ReactElement | null
   contents: string[],
@@ -10,7 +12,7 @@ export default function BlockText({ contents, style }: Props) {
   // TODO Feature: Styling Components...
 
   // DEBUG
-  console.log(style)
+  debug.log(style)
 
   return (
     <div className="m-2 rounded">{
