@@ -5,11 +5,11 @@ import PinchItem from "@Components/pinch/pinchItems";
 import debug from "@Utils/debug";
 
 
-const PinchTable = ({ props }: any) => {
-  debug.log(props)
+const PinchTable = ({ props, crewList }: any) => {
+  debug.log(crewList)
   return (
     <div>
-      {props?.map((props) => <PinchItem props={props} /> )}
+      {crewList?.map((crewList) => <PinchItem props={crewList} /> )}
     </div>
   )
 }
