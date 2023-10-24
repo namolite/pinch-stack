@@ -6,9 +6,10 @@ import debug from "@Utils/debug";
 
 
 const PinchTable = ({ props, crewList }: any) => {
-  debug.log(crewList)
+  debug.log(props)
+  // document.querySelector('#pinch-table').classList.add(props)
   return (
-    <div className="m-4">
+    <div id="pinch-table" className={`m-4 grid grid-cols-${props} gap-4`}>
       {crewList?.map((crewList) => <PinchItem props={crewList} /> )}
     </div>
   )

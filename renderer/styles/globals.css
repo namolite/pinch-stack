@@ -92,3 +92,15 @@ h6 { font-size: 1.1rem }
 .block-col-2 { width: 50% - 1rem }
 .block-col-3 { width: calc((100% - 4rem) * .29667) }
 .block-3 :nth-of-type(3) { width: calc((100% - 4rem) * .40667) }
+
+
+
+/* pinch */
+.m-top {
+  margin-top: 1px;
+}
+
+.pinch-status {
+  width: 16px;
+  height: 16px;
+}

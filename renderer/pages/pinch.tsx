@@ -19,7 +19,7 @@ export default function Pinch(dump) {
   *rol={setting.rol}
   *contents='dasdad'
   */
-  const setting = [{"col": 3, "rol": 4}]
+  const setting = {"col": 3, "rol": 4}
   const crewList = require('@Data/crewlist')
 
   const [data, setData] = useState([])
@@ -31,7 +31,7 @@ export default function Pinch(dump) {
       <CustomTitle customTitle={customTitle} /> 
       <div className="">
         <PinchTable 
-          props={setting} crewList={crewList}
+          props={setting.col} crewList={crewList}
         />
       </div>
     </div>

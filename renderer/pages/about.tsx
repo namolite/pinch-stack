@@ -1,14 +1,18 @@
 import Link from 'next/link'
-import Layout from '../components/layout/Layout'
+
+import CustomTitle from '@Components/title'
+
+const customTitle = 'pinch! dev mode ~/about/'
 
 const AboutPage = () => (
-  <Layout title="About | Next.js + TypeScript + Electron Example">
+  <>
+    <CustomTitle customTitle={customTitle} />
     <h1>About</h1>
     <p>This is the about page</p>
     <p>
       <Link href="/">Go home</Link>
     </p>
-  </Layout>
+  </>
 )
 
 export default AboutPage
