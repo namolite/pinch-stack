@@ -1,38 +1,47 @@
 [
   {
     "name": "Ehekatl",
-    "status": "meow~"
+    "status": "meow~",
+    "img": "images/status/1f495.png"
   },
   {
     "name": "Opatos",
-    "status": "exercising."
+    "status": "Exercising.",
+    "img": "images/status/1f965.png"
   },
   {
     "name": "June",
-    "status": "Healing."
+    "status": "Healing.",
+    "img": "images/status/1f54a.png"
   },
   {
     "name": "Lulwy",
-    "status": "Healing."
+    "status": "Relaxing.",
+    "img": "images/status/1f96a.png"
   },
   {
     "name": "Mani",
-    "status": "Repairing."
+    "status": "Repairing.",
+    "img": "images/status/1fa84.png"
   },
   {
     "name": "Itzpalt",
-    "status": "Experimenting."
+    "status": "Experimenting.",
+    "img": "images/status/2604.png"
   },
   {
     "name": "Kumiromi",
-    "status": "Harvesting."
+    "status": "Harvesting.",
+    "img": "images/status/1f955.png"
   },
   {
     "name": "Eyth",
-    "status": "Sleeping."
+    "status": "Sleeping.",
+    "img": "images/status/1faba.png"
   },
   {
     "name": "Yacatect",
-    "status": "Marketing."
+    "status": "Marketing.",
+    "img": "images/status/2728.png"
   }
 ]

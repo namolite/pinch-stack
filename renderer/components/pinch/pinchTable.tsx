@@ -8,7 +8,7 @@ import debug from "@Utils/debug";
 const PinchTable = ({ props, crewList }: any) => {
   debug.log(crewList)
   return (
-    <div>
+    <div className="m-4">
       {crewList?.map((crewList) => <PinchItem props={crewList} /> )}
     </div>
   )
