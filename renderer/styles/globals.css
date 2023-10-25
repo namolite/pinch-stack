@@ -51,6 +51,10 @@ html {
   user-select: none;
 }
 
+.context-menu-active {
+  visibility: hidden;
+}
+
 
 /* text styles */
 h1, h2, h3, h4, h5, h6 {
@@ -96,10 +100,6 @@ h6 { font-size: 1.1rem }
 
 
 /* pinch */
-.m-top {
-  margin-top: 1px;
-}
-
 .pinch-status {
   width: 16px;
   height: 16px;
