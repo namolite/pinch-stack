@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react'
 
 import Meta from '@Components/meta'
 import Option from '@Components/layout/Option'
+import CommonMenu from '@Components/context-menu/menu/commonMenu'
+import NyaMenu from '@Components/context-menu/menu/nyaMenu'
 
 type Props = {
   children: ReactNode
@@ -58,6 +60,8 @@ const Layout = ({ children }: Props) => {
       <div className='ml-14'>
         <div className='menu-window'></div>
         {children}
+        <CommonMenu />
+        <NyaMenu />
       </div>
       <footer>
         <div className='right-0 fixed'>

@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react"
-import { Menu, Item, Separator, Submenu, useContextMenu } from "react-contexify"
+import { useContextMenu } from "react-contexify"
 import debug from "@Utils/debug"
 
-import 'react-contexify/dist/ReactContexify.css'
 
 const dummyData = [
   { "id": 1, "title": "1", "action": "" },
@@ -13,14 +12,11 @@ const dummyData = [
 
 
 export default function Document() {
+  const { show } = useContextMenu()
+  const showDefaultMenu = e => show({ id: "nya", event: e })
+  const showNyaMenu = e => show({ id: "default", event: e })
   // TODO Feature: Context menu.
-  const MENU_ID = "default"
-  const { show } = useContextMenu({id: MENU_ID})
-  function displayMenu(e) {
-    show({
-      event: e,
-    })
-  }
+  
   /*const [clicked, setClicked] = useState(false)
   const [points, setPoints] = useState({
     x: 0,
@@ -62,26 +58,9 @@ export default function Document() {
   return (
     <>
       <div>
-        <div className="w-60 h-60 bg-black" onContextMenu={displayMenu}></div>
-        <div className="w-60 h-60 border-gray-500"></div>
+        <div className="w-60 h-60 bg-black" onContextMenu={showDefaultMenu}></div>
+        <div className="w-60 h-60 bg-blue-500" onContextMenu={showNyaMenu}></div>
       </div>
-      <Menu id={MENU_ID}>
-        <Item onClick={null}>
-          Item 1
-        </Item>
-        <Item onClick={null}>
-          Item 2
-        </Item>
-        <Separator />
-        <Item disabled>Disabled</Item>
-        <Separator />
-        <Submenu label="Submenu">
-          <Item onClick={null}>
-            Sub Item 1
-          </Item>
-          <Item onClick={null}>Sub Item 2</Item>
-        </Submenu>
-      </Menu>
     </>
   )
 }
