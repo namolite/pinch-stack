@@ -25,8 +25,8 @@ const Layout = ({ children }: Props) => {
   }, [refresh])
 
   // BUG hard coded
-  const getMenuOptions = () => require('@Data/options.json')
-  const usr = require('@Data/options_usr.json')
+  const getMenuOptions = () => require('@Data/options')
+  const usr = require('@Data/options_usr')
 
   const handleMenuOptions = (opt) => {
     const createOptions = ((opt) => {
@@ -57,12 +57,14 @@ const Layout = ({ children }: Props) => {
           </div>
         </nav>
       </header>
+
       <div className='ml-14'>
         <div className='menu-window'></div>
         {children}
         <CommonMenu />
         <NyaMenu />
       </div>
+
       <footer>
         <div className='right-0 fixed'>
           <hr />

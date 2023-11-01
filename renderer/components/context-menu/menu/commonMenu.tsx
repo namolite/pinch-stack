@@ -6,24 +6,24 @@ export default function CommonMenu() {
 
   return (
     <Menu id={MENU_ID}>
-    <Item onClick={null}>
-      Item 1
-    </Item>
-    <Item onClick={null}>
-      Item 2
-    </Item>
-    <Separator />
-    <Item disabled>Disabled</Item>
-    <Separator />
-    <Submenu label="Submenu">
       <Item onClick={null}>
-        Sub Item 1
+        Item 1
       </Item>
-      <Item onClick={null}>Sub Item 2</Item>
-    </Submenu>
-  </Menu>
+      <Item onClick={null}>
+        Item 2
+      </Item>
+      <Separator />
+      <Item disabled>Disabled</Item>
+      <Separator />
+      <Submenu label="Submenu">
+        <Item onClick={null}>
+          Sub Item 1
+        </Item>
+        <Item onClick={null}>Sub Item 2</Item>
+      </Submenu>
+    </Menu>
   )
 }
-  
+
 
 

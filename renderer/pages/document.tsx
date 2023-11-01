@@ -15,8 +15,8 @@ export default function Document() {
   const { show } = useContextMenu()
   const showDefaultMenu = e => show({ id: "nya", event: e })
   const showNyaMenu = e => show({ id: "default", event: e })
-  // TODO Feature: Context menu.
-  
+  // TODO(Done) Feature: Context menu.
+
   /*const [clicked, setClicked] = useState(false)
   const [points, setPoints] = useState({
     x: 0,
@@ -35,26 +35,20 @@ export default function Document() {
       setContextData({ ...contextData, visible: false })
     }
   }
-  
-
   return (
-    <div>
-      <div
-        className="w-40 h-40 bg-black"
-        onContextMenu={(e) => {
-          e.preventDefault()
-          setClicked(true)
-          setPoints({
-            x: e.pageX,
-            y: e.pageY,
-          })
-          debug.log(`clicked on (${e.pageX}, ${e.pageY})`)
-        }}
-      >
-        <Cc data={dummyData} position={points} />
-      </div>
-    </div>
-    */
+    <div
+      className="w-40 h-40 bg-black"
+      onContextMenu={(e) => {
+        e.preventDefault()
+        setClicked(true)
+        setPoints({
+          x: e.pageX,
+          y: e.pageY,
+        })
+        debug.log(`clicked on (${e.pageX}, ${e.pageY})`)
+      }}
+    ><Cc data={dummyData} position={points} /></div>
+  */
   return (
     <>
       <div>
