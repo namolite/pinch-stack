@@ -35,6 +35,7 @@ const Layout = ({ children }: Props) => {
       setRefresh(oldKey => oldKey + 1)
     })
   }
+  console.log(data)
 
   return (
     <div>

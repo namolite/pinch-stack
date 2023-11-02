@@ -1,22 +1,16 @@
 import Link from "next/link"
 import React, { useState } from "react"
 
-interface IItem {
-  id: string,
-  name: string,
-  url: string,
-  path?: string,
-}
-
-export default function DocumentListItem(itemProps: any, network: boolean) {
+export default function DocumentListItem({title, path}) {
   // const [itemIntro, setItemIntro] = useState(props.url)
+
+  // network ? itemProps.url : itemProps.path
 
   return (
     <Link
-      key={itemProps.id}
-      href={network ? itemProps.url : itemProps.path}
+      href={path}
       className=""
-    >
+    >{title}
       <div className=""></div>
     </Link>
   )

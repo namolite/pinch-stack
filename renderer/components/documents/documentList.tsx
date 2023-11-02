@@ -2,42 +2,34 @@ import React, { useState, useEffect } from 'react'
 
 import DocumentListItem from '@Components/documents/documentListItem'
 
+import debug from '@Utils/debug'
+
 // TODO Feature: Switch offline mode.
 
 // TODO Component: Switch offline mode open by custom error.
 
 interface IItem {
-  
+  props: IItemProps[]
 }
 
 interface IItemProps {
   id: string,
   name: string,
   url: string,
-  path?: string,
+  path?: string
 }
 
-export default function DocumentList({ props }: any) {
-  const [documentList, setDocumentList] = useState<any | null>(null)
-  
-  useEffect(() => {
-    async function fetchDocumentList() {
-      const list = await getDocumentList()
-      setDocumentList(list)
-    }
-    fetchDocumentList()
-  })
-
-  const getDocumentList = () => {
-    const listProps = require('@Data/document_list')
-    return listProps
-  }
-
+export default function DocumentList({ props }: IItem | null) {
+  debug.log(props)
   return (
-    <div className=''>
+    <div className='document-list flex flex-col'>
       <div className=''>{
-        documentList.map((listItem) => (
-          <DocumentListItem itemProps={listItem} network={false} />
+        props.map((item) => (
+          <DocumentListItem
+            key={item.id}
+            title={item.name}
+            path={item.url}
+          />
         ))
       }</div>
     </div>
