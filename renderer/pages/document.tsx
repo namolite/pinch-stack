@@ -7,8 +7,8 @@ import DocumentDisplay from "@Components/documents/documentDisplay"
 
 export default function Document() {
   const { show } = useContextMenu()
-  const showDefaultMenu = e => show({ id: "nya", event: e })
-  const showNyaMenu = e => show({ id: "default", event: e })
+  const showDefaultMenu = e => show({ id: "menu", event: e })
+  const showNyaMenu = e => show({ id: "nya", event: e })
 
   const [documentListData, setDocumentListData] = useState<any | null>(null)
 
@@ -18,6 +18,7 @@ export default function Document() {
       setDocumentListData(list)
     }
     fetchDocumentList()
+    debug.log(documentListData)
   })
 
   const getDocumentList = () => {

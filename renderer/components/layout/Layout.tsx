@@ -5,6 +5,7 @@ import Meta from '@Components/meta'
 import Option from '@Components/layout/Option'
 import CommonMenu from '@Components/context-menu/menu/commonMenu'
 import NyaMenu from '@Components/context-menu/menu/nyaMenu'
+import EditorMenu from '@Components/context-menu/menu/editorMenu'
 
 type Props = {
   children: ReactNode
@@ -64,6 +65,7 @@ const Layout = ({ children }: Props) => {
         {children}
         <CommonMenu />
         <NyaMenu />
+        <EditorMenu />
       </div>
 
       <footer>

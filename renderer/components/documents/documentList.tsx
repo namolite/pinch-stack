@@ -24,7 +24,7 @@ export default function DocumentList({ props }: IItem | null) {
   return (
     <div className='document-list flex flex-col'>
       <div className=''>{
-        props.map((item) => (
+        props?.map((item) => (
           <DocumentListItem
             key={item.id}
             title={item.name}
