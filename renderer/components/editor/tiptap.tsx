@@ -1,7 +1,6 @@
 'use client'
 
 import { useEditor, EditorContent } from '@tiptap/react'
-import StarterKit from '@tiptap/starter-kit'
 // Extensions.
 import Document from '@tiptap/extension-document'
 import History from '@tiptap/extension-history'
@@ -65,11 +64,15 @@ const Tiptap = () => {
       TableCell,
       TableHeader,
       TableRow,
+      // SearchAndReplace.configure({
+      //   searchResultClass: "search-result", // class to give to found items. default 'search-result'
+      //   caseSensitive: false, // no need to explain
+      //   disableRegex: false, // also no need to explain
+      // }),
     ],
     content: '<p>Hello World! 🌎️</p>',
-    autofocus: false, // 自动聚焦
-    /** 设置自动获取焦点
-     *  
+    autofocus: false,
+    /** 
      *  ‘start’: 设置光标在编辑器文档的最前面
      *  ‘end’: 设置光标在编辑器文档的最后面
      *  ‘all’ 选中全部文档
@@ -78,13 +81,22 @@ const Tiptap = () => {
      *  false: 禁用自动获取焦点
      *  null: 禁用自动获取焦点
      */
-    editable: true,   // 是否可编辑
-    history: true,    // 启用历史
+    editable: true,
   })
 
   if (!editor) {
     return null
   }
+
+  // const searchTerm = useState<string>("replace");
+  // const replaceTerm = useState<string>("astonishing");
+
+  // you can use the commands provided by SearchNReplace extension to update the values of search and replace terms.
+  // const updateSearchReplace = () => { // you can probably use `useCallback` hook)
+  //   if (!editor.value) return;
+  //  editor.value.commands.setSearchTerm(searchTerm.value);
+  //  editor.value.commands.setReplaceTerm(replaceTerm.value);
+  // };
 
   return (
     <div>

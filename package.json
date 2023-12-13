@@ -13,6 +13,7 @@
     "type-check": "tsc -p ./renderer/tsconfig.json && tsc -p ./electron-src/tsconfig.json"
   },
   "dependencies": {
+    "@sereneinserenade/tiptap-search-and-replace": "^0.0.2",
     "@tiptap/extension-blockquote": "^2.1.13",
     "@tiptap/extension-bold": "^2.1.13",
     "@tiptap/extension-bullet-list": "^2.1.13",

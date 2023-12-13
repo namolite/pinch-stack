@@ -289,6 +289,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@sereneinserenade/tiptap-search-and-replace@npm:^0.0.2":
+  version: 0.0.2
+  resolution: "@sereneinserenade/tiptap-search-and-replace@npm:0.0.2"
+  peerDependencies:
+    "@tiptap/core": ^2.1.8
+    "@tiptap/pm": ^2.1.8
+  checksum: 2dc7858bf92d57a7809409227f120c5e8af41a2f448b2a10697a6075c3cdde3667219beef51d22306094977c8ac8ce91dc18ae46f433e5f5696d13cb887024f6
+  languageName: node
+  linkType: hard
+
 "@sindresorhus/is@npm:^4.0.0":
   version: 4.6.0
   resolution: "@sindresorhus/is@npm:4.6.0"
@@ -4185,6 +4195,7 @@ next@latest:
   version: 0.0.0-use.local
   resolution: "root-workspace-0b6124@workspace:."
   dependencies:
+    "@sereneinserenade/tiptap-search-and-replace": ^0.0.2
     "@tiptap/extension-blockquote": ^2.1.13
     "@tiptap/extension-bold": ^2.1.13
     "@tiptap/extension-bullet-list": ^2.1.13
