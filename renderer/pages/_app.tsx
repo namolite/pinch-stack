@@ -1,5 +1,6 @@
 import Layout from '@Components/layout/Layout'
 import '@Styles/globals.css'
+import '@Styles/editor.css'
 import '@Styles/editor.scss'
 import type { AppProps } from 'next/app'
 

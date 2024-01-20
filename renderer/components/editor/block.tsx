@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react'
 import '@blocksuite/presets/themes/affine.css'
 import { createEmptyPage, DocEditor } from '@blocksuite/presets'
 
+
 const Editor = () => {
   const editorRef = useRef(null)
 
