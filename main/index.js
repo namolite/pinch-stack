@@ -20,9 +20,39 @@ electron_1.app.on('ready', async () => {
         // frame: false,
         webPreferences: {
             nodeIntegration: false,
-            contextIsolation: false,
+            contextIsolation: true,
             preload: (0, path_1.join)(__dirname, 'preload.js'),
         },
+    });
+    // Window control
+    electron_1.ipcMain.on('windowMinimize', () => {
+        mainWindow.minimize();
+    });
+    electron_1.ipcMain.on('windowMaximize', () => {
+        if (mainWindow.isMaximized()) {
+            mainWindow.restore();
+        }
+        else {
+            mainWindow.maximize();
+        }
+    });
+    electron_1.ipcMain.on('windowClose', () => {
+        mainWindow.close();
+    });
+    // Recive from @Hooks\useInspectElement
+    electron_1.ipcMain.on('inspectElement', (event, args) => {
+        const webContents = event.sender; // 获取发送消息的渲染进程的 webContents
+        // 检查元素
+        webContents.inspectElement(args.x, args.y);
+        // 如果需要，打开开发者工具
+        if (!webContents.isDevToolsOpened()) {
+            webContents.openDevTools();
+        }
+    });
+    // listen the channel `message` and resend the received message to the renderer process
+    electron_1.ipcMain.on('message', (event, message) => {
+        console.log(message);
+        setTimeout(() => event.sender.send('message', 'hi from electron'), 500);
     });
     const url = electron_is_dev_1.default
         ? 'http://localhost:8000/'
@@ -35,18 +65,3 @@ electron_1.app.on('ready', async () => {
 });
 // Quit the app once all windows are closed
 electron_1.app.on('window-all-closed', electron_1.app.quit);
-// listen the channel `message` and resend the received message to the renderer process
-electron_1.ipcMain.on('message', (event, message) => {
-    console.log(message);
-    setTimeout(() => event.sender.send('message', 'hi from electron'), 500);
-});
-// Recive from @Hooks\useInspectElement
-electron_1.ipcMain.on('inspect-element', (event, args) => {
-    const webContents = event.sender; // 获取发送消息的渲染进程的 webContents
-    // 检查元素
-    webContents.inspectElement(args.x, args.y);
-    // 如果需要，打开开发者工具
-    if (!webContents.isDevToolsOpened()) {
-        webContents.openDevTools();
-    }
-});

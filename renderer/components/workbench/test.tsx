@@ -14,15 +14,17 @@ const IndexInner = () => {
     const handleMessage = (_event, args) => alert(args)
 
     // add a listener to 'message' channel
-    global.ipcRenderer.addListener('message', handleMessage)
+    window.electronAPI.on('message', handleMessage)
+    // global.ipcRenderer.addListener('message', handleMessage)
 
     return () => {
+      // TODO BUG
       global.ipcRenderer.removeListener('message', handleMessage)
     }
   }, [])
 
   const onMessageClick = () => {
-    global.ipcRenderer.send('message', 'Here we go!')
+    window.electronAPI.send('message', 'Here we go!')
   }
 
   const dummyData = [

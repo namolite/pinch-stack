@@ -1,16 +1,12 @@
 import { Menu, Item, Separator, Submenu } from "react-contexify"
 import 'react-contexify/dist/ReactContexify.css'
 
-import useInspectElement from '@Hooks/useInspectElement'
-
 export default function CommonMenu() {
   const MENU_ID = "default"
 
-  const inspectElement = () => useInspectElement()
-
   return (
     <Menu id={MENU_ID}>
-      <Item onClick={inspectElement}>
+      <Item onClick={null}>
         Inspect
       </Item>
       <Item onClick={null}>

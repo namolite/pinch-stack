@@ -6,6 +6,7 @@ import Option from '@Components/layout/Option'
 import CommonMenu from '@Components/context-menu/menu/commonMenu'
 import NyaMenu from '@Components/context-menu/menu/nyaMenu'
 import EditorMenu from '@Components/context-menu/menu/editorMenu'
+import TitleBar from '@Components/layout/titleBar'
 
 type Props = {
   children: ReactNode
@@ -61,7 +62,7 @@ const Layout = ({ children }: Props) => {
       </header>
 
       <div className='ml-14'>
-        <div className='menu-window'></div>
+        <TitleBar />
         {children}
         <CommonMenu />
         <NyaMenu />

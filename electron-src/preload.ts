@@ -1,20 +1,42 @@
-import { contextBridge, ipcRenderer } from 'electron';
+/* eslint-disable @typescript-eslint/no-namespace */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { contextBridge, ipcRenderer } from 'electron'
 
-// 创建一个安全的、受限的环境，只暴露必要的功能
+/*
+declare global {
+  namespace NodeJS {
+    interface Global {
+      ipcRenderer: IpcRenderer
+    }
+  }
+}
+*/
 contextBridge.exposeInMainWorld('electronAPI', {
+  windowMinimize: () => ipcRenderer.send('windowMinimize'),
+  windowMaximize: () => ipcRenderer.send('windowMaximize'),
+  windowClose: () => ipcRenderer.send('windowClose'),
   send: (channel: string, data: any) => {
-    // 可以在这里添加通道白名单以提高安全性
-    const validChannels = ["inspect-element"];
+    const validChannels = ['windowMinimize','windowMaximize','windowClose','inspectElement']
     if (validChannels.includes(channel)) {
-      ipcRenderer.send(channel, data);
+      console.log(data + 'sdasdasdasdasd')
+      ipcRenderer.send(channel, data)
     }
   },
   on: (channel: string, func: (...args: any[]) => void) => {
-    const validChannels = ["fromMain"];
+    const validChannels = ["fromMain"]
     if (validChannels.includes(channel)) {
-      // 删除现有的监听器，避免重复
-      ipcRenderer.removeAllListeners(channel);
-      ipcRenderer.on(channel, (event, ...args) => func(...args));
+      ipcRenderer.removeAllListeners(channel)
+      ipcRenderer.on(channel, (_s, ...args) => func(...args))
+    }
+  },
+  off: (channel: string, func: (...args: any[]) => void) => {
+    const validChannels = ['message']
+    if (validChannels.includes(channel)) {
+      ipcRenderer.removeListener(channel, func)
     }
   }
 })
+
+// Since we disabled nodeIntegration we can reintroduce
+// needed node functionality here
+// process.once('loaded', () => { global.ipcRenderer = ipcRenderer })
