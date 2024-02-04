@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@blocksuite/presets": "nightly",
+    "@electron/remote": "^2.1.1",
     "@sereneinserenade/tiptap-search-and-replace": "^0.0.2",
     "@tiptap/extension-blockquote": "^2.1.13",
     "@tiptap/extension-bold": "^2.1.13",

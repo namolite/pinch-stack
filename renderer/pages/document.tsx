@@ -62,7 +62,7 @@ export default function Document() {
   return (
     <>
       <DocumentDisplay />
-      <div className="flex">
+      <div className="flex" onContextMenu={showDefaultMenu}>
         <aside className="fixed w-60 h-screen bg-gray-100 p-4 overflow-auto">
           <div className="flex items-center mb-4">
             <div className="rounded-full h-8 w-8 bg-blue-500 flex items-center justify-center text-white">D</div>
@@ -86,27 +86,29 @@ export default function Document() {
             <button className="text-gray-700 font-semibold">+ New Page</button>
           </div>
         </aside>
-        <main className="w-3/4 p-8" onContextMenu={showNyaMenu}>
-          <h1 className="text-4xl font-bold mb-6">Templates Galleries</h1>
-          <p className="text-gray-700 mb-4">No matter if you're organizing your personal life or getting things done at work, our templates galleries have got you covered!</p>
-          <p className="text-gray-700 mb-4">Here We offer a wide range of resources to meet your unique needs and help you achieve your goals, whether in your personal or professional life.</p>
-          <hr className="my-6" />
-          <p className="text-gray-700 mb-4">Tired of managing your notes or coming up with an efficient work plan? Whether you're a student, parent, or have diverse interests, here we provide a few templates to kick off your journey and unlock your true potential with AFFiNe and reap incredible benefits.</p>
-          <div className="space-y-4">
-            <div className="flex items-center">
-              <i className="fas fa-home text-gray-500 mr-2"></i>
-              <p className="text-gray-700 font-semibold">Personal Home</p>
-            </div>
-            <p className="text-gray-500 ml-6">Staying organized and efficient in a dynamic work environment is essential for today's working people. AFFiNe elevates productivity for project managers, software engineers, and professionals alike. We're excited to provide insights into how AFFiNe transforms work life.</p>
-            <div className="flex items-center">
-              <i className="fas fa-briefcase text-gray-500 mr-2"></i>
-              <p className="text-gray-700 font-semibold">Working Home</p>
+        <main className="ml-64 p-8">
+          <div onContextMenu={showNyaMenu}>
+            <h1 className="text-4xl font-bold mb-6">Templates Galleries</h1>
+            <p className="text-gray-700 mb-4">No matter if you're organizing your personal life or getting things done at work, our templates galleries have got you covered!</p>
+            <p className="text-gray-700 mb-4">Here We offer a wide range of resources to meet your unique needs and help you achieve your goals, whether in your personal or professional life.</p>
+            <hr className="my-6" />
+            <p className="text-gray-700 mb-4">Tired of managing your notes or coming up with an efficient work plan? Whether you're a student, parent, or have diverse interests, here we provide a few templates to kick off your journey and unlock your true potential with AFFiNe and reap incredible benefits.</p>
+            <div className="space-y-4">
+              <div className="flex items-center">
+                <i className="fas fa-home text-gray-500 mr-2"></i>
+                <p className="text-gray-700 font-semibold">Personal Home</p>
+              </div>
+              <p className="text-gray-500 ml-6">Staying organized and efficient in a dynamic work environment is essential for today's working people. AFFiNe elevates productivity for project managers, software engineers, and professionals alike. We're excited to provide insights into how AFFiNe transforms work life.</p>
+              <div className="flex items-center">
+                <i className="fas fa-briefcase text-gray-500 mr-2"></i>
+                <p className="text-gray-700 font-semibold">Working Home</p>
+              </div>
             </div>
             <DocumentList
               props={documentListData}
             />
           </div>
-        </main>
+        </main >
       </div>
     </>
   )

@@ -40,3 +40,13 @@ electron_1.ipcMain.on('message', (event, message) => {
     console.log(message);
     setTimeout(() => event.sender.send('message', 'hi from electron'), 500);
 });
+// Recive from @Hooks\useInspectElement
+electron_1.ipcMain.on('inspect-element', (event, args) => {
+    const webContents = event.sender; // 获取发送消息的渲染进程的 webContents
+    // 检查元素
+    webContents.inspectElement(args.x, args.y);
+    // 如果需要，打开开发者工具
+    if (!webContents.isDevToolsOpened()) {
+        webContents.openDevTools();
+    }
+});
