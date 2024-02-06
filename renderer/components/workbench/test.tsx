@@ -15,11 +15,9 @@ const IndexInner = () => {
 
     // add a listener to 'message' channel
     window.electronAPI.on('message', handleMessage)
-    // global.ipcRenderer.addListener('message', handleMessage)
 
     return () => {
-      // TODO BUG
-      global.ipcRenderer.removeListener('message', handleMessage)
+      window.electronAPI.off('message', handleMessage)
     }
   }, [])
 

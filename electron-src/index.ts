@@ -14,8 +14,8 @@ app.on('ready', async () => {
   const mainWindow = new BrowserWindow({
     width: 1000,
     height: 750,
+    frame: false,
     autoHideMenuBar: true,
-    // frame: false,
     webPreferences: {
       nodeIntegration: false,
       contextIsolation: true,
@@ -23,7 +23,7 @@ app.on('ready', async () => {
     },
   })
 
-  // Window control
+  // (Window control) Recive from @Components/layout/titleBar
   ipcMain.on('windowMinimize', () => {
     mainWindow.minimize();
   });
@@ -38,12 +38,10 @@ app.on('ready', async () => {
     mainWindow.close();
   });
 
-  // Recive from @Hooks\useInspectElement
+  // (Open dev tool) Recive from @Hooks\useInspectElement
   ipcMain.on('inspectElement', (event, args) => {
-    const webContents = event.sender; // 获取发送消息的渲染进程的 webContents
-    // 检查元素
+    const webContents = event.sender;
     webContents.inspectElement(args.x, args.y);
-    // 如果需要，打开开发者工具
     if (!webContents.isDevToolsOpened()) {
       webContents.openDevTools();
     }

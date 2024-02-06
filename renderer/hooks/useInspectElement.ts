@@ -1,17 +1,18 @@
-import { ipcRenderer } from 'electron';
-
+import debug from "@Utils/debug";
 /**
  * 
- *  Inspect elements like MS Edge in context menu
+ *  Inspect elements in context menu like Microsoft Edge
+ * 
+ *  Use in development only
  * 
  */
 
 const useInspectElement = () => {
   const handleInspectElement = (event: React.MouseEvent) => {
     event.preventDefault();
-
-    // 发送 IPC 消息，并附带点击位置的屏幕坐标
-    ipcRenderer.send('inspect-element', { x: event.clientX, y: event.clientY });
+    debug.log(event)
+    // ipcRenderer.send('inspect-element', { x: event.clientX, y: event.clientY });
+    window.electronAPI.inspectElement('inspect-element', { x: event.clientX, y: event.clientY })
   };
 
   return handleInspectElement;

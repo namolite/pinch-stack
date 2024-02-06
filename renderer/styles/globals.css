@@ -16,7 +16,10 @@
 }
 
 /* navigation */
-.menu {background-color: #3f3f3f;}
+.menu {
+  background-color: #3f3f3f;
+  z-index: 50;
+}
 
 .menu-options {
   display: flex;
@@ -42,13 +45,18 @@
 
 .menu-title {
   background-color: #ccc;
-  height: 50px;
+  height: 40px;
+  z-index: 20;
 }
 
 
 /* main & duplicate styles */
 html {
   user-select: none;
+}
+
+.main-body {
+  padding-top: 40px;
 }
 
 .context-menu-active {

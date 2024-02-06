@@ -61,7 +61,7 @@ const Layout = ({ children }: Props) => {
         </nav>
       </header>
 
-      <div className='ml-14'>
+      <div className='main-body ml-14'>
         <TitleBar />
         {children}
         <CommonMenu />

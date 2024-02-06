@@ -16,15 +16,15 @@ electron_1.app.on('ready', async () => {
     const mainWindow = new electron_1.BrowserWindow({
         width: 1000,
         height: 750,
+        frame: false,
         autoHideMenuBar: true,
-        // frame: false,
         webPreferences: {
             nodeIntegration: false,
             contextIsolation: true,
             preload: (0, path_1.join)(__dirname, 'preload.js'),
         },
     });
-    // Window control
+    // (Window control) Recive from @Components/layout/titleBar
     electron_1.ipcMain.on('windowMinimize', () => {
         mainWindow.minimize();
     });
