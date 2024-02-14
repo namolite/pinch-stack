@@ -3,10 +3,12 @@ import { useState, useEffect } from 'react'
 
 import Meta from '@Components/meta'
 import Option from '@Components/layout/Option'
+import SideList from '@Components/layout/sideList'
+import TitleBar from '@Components/layout/titleBar'
+
 import CommonMenu from '@Components/context-menu/menu/commonMenu'
 import NyaMenu from '@Components/context-menu/menu/nyaMenu'
 import EditorMenu from '@Components/context-menu/menu/editorMenu'
-import TitleBar from '@Components/layout/titleBar'
 
 type Props = {
   children: ReactNode
@@ -61,9 +63,13 @@ const Layout = ({ children }: Props) => {
         </nav>
       </header>
 
+      <SideList />
+
       <div className='main-body ml-14'>
         <TitleBar />
-        {children}
+        <div className='children absolute p-10'>
+          {children}
+        </div>
         <CommonMenu />
         <NyaMenu />
         <EditorMenu />

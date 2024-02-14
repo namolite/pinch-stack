@@ -15,7 +15,7 @@ const IndexPage = () => {
   return (
     <div className='flex w-full justify-center'>
       <CustomTitle customTitle={customTitle} />
-      <div className='w-full px-12'>
+      <div className='w-full'>
         <IndexInner />
       </div>
     </div>
