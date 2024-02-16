@@ -13,6 +13,8 @@
   --font-theme-colour: #0c0c0c;
   --font-plain-text: #0c0c0c;
   --font-discription: #0c0c0c;
+
+  --layout-background: #cecece;
 }
 
 /* layout */
@@ -46,11 +48,15 @@
 .menu-title {
   background-color: #ccc;
   height: 40px;
-  z-index: 20;
 }
 
 .sidelist {
+  background-color: var(--layout-background);
   z-index: 30;
+}
+
+.sidelist-menu {
+  border-bottom-width: 2px;
 }
 
 .children {
@@ -58,14 +64,16 @@
   width: calc(100% - 18.5rem);
 }
 
+.main-page {
+  background-color: var(--layout-background);
+  left: 18rem;
+  width: calc(100% - 18rem);
+}
+
 
 /* main & duplicate styles */
 html {
   user-select: none;
-}
-
-.main-body {
-  padding-top: 40px;
 }
 
 .context-menu-active {

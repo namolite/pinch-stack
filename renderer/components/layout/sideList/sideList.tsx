@@ -1,4 +1,4 @@
-import CardDivider from "@Components/layout/cardDivider"
+import CardDivider from "@Components/layout/sideList/cardDivider"
 
 export default function SideList() {
   return (

@@ -3,8 +3,9 @@ import { useState, useEffect } from 'react'
 
 import Meta from '@Components/meta'
 import Option from '@Components/layout/Option'
-import SideList from '@Components/layout/sideList'
+import SideList from '@Components/layout/sideList/sideList'
 import TitleBar from '@Components/layout/titleBar'
+import PageContainer from '@Components/layout/pageContainer'
 
 import CommonMenu from '@Components/context-menu/menu/commonMenu'
 import NyaMenu from '@Components/context-menu/menu/nyaMenu'
@@ -45,7 +46,7 @@ const Layout = ({ children }: Props) => {
     <div>
       <Meta />
       <header>
-        <nav className='menu w-14 h-full fixed border-r text-gray-600'>
+        <nav className='menu w-14 h-full fixed text-gray-600'>
           <div className='h-full flex flex-col content-center justify-between'>
             <div>
               <div>
@@ -65,22 +66,21 @@ const Layout = ({ children }: Props) => {
 
       <SideList />
 
-      <div className='main-body ml-14'>
+      <PageContainer>
         <TitleBar />
-        <div className='children absolute p-10'>
-          {children}
-        </div>
-        <CommonMenu />
-        <NyaMenu />
-        <EditorMenu />
-      </div>
+        {children}
 
-      <footer>
-        <div className='right-0 fixed'>
-          <hr />
-          <span>I'm here to stay ❤ (Footer)</span>
-        </div>
-      </footer>
+        <footer>
+          <div className='right-0 fixed'>
+            <hr />
+            <span>I'm here to stay ❤ (Footer)</span>
+          </div>
+        </footer>
+
+      </PageContainer>
+      <CommonMenu />
+      <NyaMenu />
+      <EditorMenu />
     </div>
   )
 }
