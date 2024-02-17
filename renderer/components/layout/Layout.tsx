@@ -4,8 +4,8 @@ import { useState, useEffect } from 'react'
 import Meta from '@Components/meta'
 import Option from '@Components/layout/Option'
 import SideList from '@Components/layout/sideList/sideList'
-import TitleBar from '@Components/layout/titleBar'
-import PageContainer from '@Components/layout/pageContainer'
+import TitleBar from '@Components/layout/page/titleBar'
+import PageContainer from '@Components/layout/page/pageContainer'
 
 import CommonMenu from '@Components/context-menu/menu/commonMenu'
 import NyaMenu from '@Components/context-menu/menu/nyaMenu'
@@ -68,12 +68,13 @@ const Layout = ({ children }: Props) => {
 
       <PageContainer>
         <TitleBar />
-        {children}
-
+        <div className='absolute m-2 w-full'>
+          {children}
+        </div>
         <footer>
           <div className='right-0 fixed'>
             <hr />
-            <span>I'm here to stay ❤ (Footer)</span>
+            <span>I'm here (Footer)</span>
           </div>
         </footer>
 

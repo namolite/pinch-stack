@@ -7,7 +7,7 @@
   --menu-background: #5e5e5e;
   --menu-item-colour: #fff;
   --menu-window-colour: #fff;
-  --background: #d2d2d2;
+  --background: #eeeeee;
   --font-title-large: #0c0c0c;
   --font-title-small: #0c0c0c;
   --font-theme-colour: #0c0c0c;
@@ -15,6 +15,8 @@
   --font-discription: #0c0c0c;
 
   --layout-background: #cecece;
+  --sidelist-inner-background: #fefefe;
+  --mainpage-inner-background: #fefefe;
 }
 
 /* layout */
@@ -45,17 +47,17 @@
   opacity: .6;
 }
 
-.menu-title {
-  background-color: #ccc;
-  height: 40px;
-}
-
 .sidelist {
   background-color: var(--layout-background);
   z-index: 30;
 }
 
-.sidelist-menu {
+.sidelist-inner {
+  background-color: var(--sidelist-inner-background);
+}
+
+.sidelist-bar, .title-bar {
+  height: 50px;
   border-bottom-width: 2px;
 }
 
@@ -64,10 +66,14 @@
   width: calc(100% - 18.5rem);
 }
 
-.main-page {
+.mainpage {
   background-color: var(--layout-background);
   left: 18rem;
   width: calc(100% - 18rem);
+}
+
+.mainpage-inner {
+  background-color: var(--mainpage-inner-background);
 }
 
 
