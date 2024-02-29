@@ -16,6 +16,11 @@
 
   --layout-background: #cecece;
   --sidelist-inner-background: #fefefe;
+  --sidelist-bar-background: #e4e4e4;
+  --sidelist-bar-button-text: #9d9d9d;
+  --sidelist-bar-button-hover: rgb(244, 244, 245);
+  --sidelist-bar-button-active: #fbfbfb;
+  --sidelist-bar-button-active-text: #636363;
   --mainpage-inner-background: #fefefe;
 }
 
@@ -59,6 +64,27 @@
 .sidelist-bar, .title-bar {
   height: 50px;
   border-bottom-width: 2px;
+}
+
+.sidelist-bar-bg {
+  background-color: var(--sidelist-bar-background);
+  padding: 0.15rem;
+}
+
+.sidelist-bar-button {
+  font-weight: bold;
+  color: var(--sidelist-bar-button-text);
+}
+
+.sidelist-bar-button:hover {
+  background-color: var(--sidelist-bar-button-hover);
+}
+
+.sidelist-bar-button-active {
+  font-weight: bold;
+  color: var(--sidelist-bar-button-active-text);
+  background-color: var(--sidelist-bar-button-active);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 .children {

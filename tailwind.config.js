@@ -16,7 +16,11 @@ module.exports = {
       gray: colors.gray,
       blue: colors.sky,
     },
-    extend: {},
+    extend: {
+      spacing: {
+        '015': '0.15rem',
+      },
+    },
   },
   plugins: [],
 }
