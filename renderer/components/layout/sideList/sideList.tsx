@@ -1,6 +1,10 @@
 import CardDivider from "@Components/layout/sideList/cardDivider"
+import SideListContent from "@Components/layout/sideList/content/index"
 
 export default function SideList() {
+
+
+
   return (
     <aside>
       <CardDivider>
@@ -11,6 +15,9 @@ export default function SideList() {
         <div className="space-y-2">
           <button className="text-gray-700 font-semibold">All pages</button>
           <button className="text-gray-700 font-semibold">Settings</button>
+          <div>
+            <SideListContent />
+          </div>
           <div className="pt-4">
             <p className="text-gray-500 text-sm">Favourites</p>
             <button className="text-gray-700 font-semibold">Getting Started</button>
