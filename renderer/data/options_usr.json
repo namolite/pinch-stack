@@ -1,7 +1,7 @@
 [
   {
-    "id": "personal",
-    "path": "/",
+    "id": "setting",
+    "path": "/setting",
     "ico": "/images/options/personal.svg"
   }
 ]
