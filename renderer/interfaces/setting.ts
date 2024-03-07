@@ -4,3 +4,9 @@ export interface IMenu {
   path: string,
   ico: string
 }
+
+export interface IOption {
+  id: string
+  label: string
+  ico: string
+}

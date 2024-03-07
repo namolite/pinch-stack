@@ -1,15 +1,15 @@
-import { useAtom } from 'jotai';
-import { selectedTabAtom } from "@Utils/states"
+import { useAtom } from 'jotai'
+import { selectedTabAtom } from '@Utils/states'
 
-import Link from "next/link"
+import Link from 'next/link'
 
 
 export default function Option({ props }: any) {
-  const [selectedTab, setSelectedTab] = useAtom(selectedTabAtom);
+  const [selectedTab, setSelectedTab] = useAtom(selectedTabAtom)
 
   const handleChangeTab = (tab: string) => {
-    setSelectedTab(tab);
-  };
+    setSelectedTab(tab)
+  }
 
 
   return (

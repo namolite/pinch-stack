@@ -12,7 +12,7 @@ import SideListSetting from "@Components/layout/sideList/content/sideListSetting
 
 
 const SideListContent = () => {
-  const [selectedTab] = useAtom(selectedTabAtom);
+  const [selectedTab] = useAtom(selectedTabAtom)
 
   switch (selectedTab) {
     case 'home':

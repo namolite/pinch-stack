@@ -16,6 +16,7 @@ const customTitle = 'pinch! dev mode ~/WithInitalProps/'
 
 const WithInitialProps = ({ items }: Props) => {
   const router = useRouter()
+
   return (
     <>
       <CustomTitle customTitle={customTitle} />
@@ -36,3 +37,4 @@ export async function getStaticProps() {
 }
 
 export default WithInitialProps
+

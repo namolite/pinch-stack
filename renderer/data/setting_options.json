@@ -1,0 +1,27 @@
+[
+  {
+    "id": "info",
+    "label": "Information",
+    "ico": "/"
+  },
+  {
+    "id": "system",
+    "label": "System",
+    "ico": "/"
+  },
+  {
+    "id": "security",
+    "label": "Security",
+    "ico": "/"
+  },
+  {
+    "id": "appearance",
+    "label": "Appearance",
+    "ico": "/"
+  },
+  {
+    "id": "account",
+    "label": "Account",
+    "ico": "/"
+  }
+]

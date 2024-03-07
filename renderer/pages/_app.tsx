@@ -1,7 +1,8 @@
 import Layout from '@Components/layout/Layout'
 import '@Styles/globals.css'
-import '@Styles/editor.css'
-import '@Styles/editor.scss'
+// import '@Styles/editor.css'
+// import '@Styles/editor.scss'
+import '@Styles/chat.css'
 import type { AppProps } from 'next/app'
 
 export default function App({ Component, pageProps }: AppProps) {
