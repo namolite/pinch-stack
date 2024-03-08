@@ -7,7 +7,9 @@ const Message: React.FC = () => {
   const [socket, setSocket] = useState<Socket | null>(null);
 
   useEffect(() => {
-    const newSocket = io();
+    const host: string = 'http://192.168.43.151:23333/chat'
+
+    const newSocket = io('http://localhost:23333');
     setSocket(newSocket);
     newSocket.on('chat message', (msg: string) => {
       setMessages(messages => [...messages, msg]);
