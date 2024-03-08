@@ -112,6 +112,14 @@ html {
   visibility: hidden;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
+::-webkit-scrollbar-button {
+  display: none;
+}
+
 
 /* text styles */
 h1, h2, h3, h4, h5, h6 {

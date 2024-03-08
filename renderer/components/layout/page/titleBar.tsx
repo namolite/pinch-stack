@@ -19,7 +19,8 @@ export default function TitleBar() {
 
   return (
     <div className='title-bar h-12 w-full flex top-0 left-0 justify-between items-center' style={{ WebkitAppRegion: 'drag', WebkitUserSelect: 'none' }}>
-      <div className="absolute h-full flex right-0" style={{ WebkitAppRegion: 'no-drag' }}>
+      <div style={{ flex: 1 }}></div>
+      <div className=" h-full flex right-0" style={{ WebkitAppRegion: 'no-drag' }}>
         <button onClick={() => window.electronAPI.windowMinimize()}> Minimize&nbsp; </button>
         <button onClick={() => window.electronAPI.windowMaximize()}> Maximize&nbsp; </button>
         <button onClick={() => window.electronAPI.windowClose()}> Close&nbsp;&nbsp; </button>
