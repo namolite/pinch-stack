@@ -1,5 +1,5 @@
 
 
 export default function SettingAccount() {
-  return <>SettingAccount</>
+  return <>acc</>
 }
