@@ -1,4 +1,5 @@
 import { useAtom } from 'jotai'
+
 import { settingAtom } from '@Utils/states'
 
 import SettingAccount from './setting/settingAccount'
@@ -10,6 +11,8 @@ import SettingSystem from './setting/settingSystem'
 
 const Setting = () => {
   const [selectedTab] = useAtom(settingAtom)
+
+
 
   switch (selectedTab) {
     case 'account':
