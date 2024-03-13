@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { useAtom } from 'jotai'
 import axios from 'axios'
 
@@ -26,8 +26,7 @@ const LoginForm = (props: { host: IHost | any, onClose: () => void }) => {
     // TODO Login verification(sse)
     // 全局开启在线状态
     // 保持登录连接（心跳）
-
-    // send sse requrest
+    // send sse requrests
     try {
       const response = await axios.post(url, {
         username: username,
