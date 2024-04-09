@@ -3,7 +3,9 @@ import Link from 'next/link'
 import CustomTitle from '@Components/title'
 
 import { useContextMenu } from 'react-contexify'
-import Editor from '@Components/editor/block'
+import EditorProvider from '@Components/editor/blocksuite'
+import Editor from '@Components/editor/editor'
+import { DocCollection } from '@blocksuite/store';
 
 const customTitle = 'pinch! dev mode ~/about/'
 
@@ -13,7 +15,8 @@ const customTitle = 'pinch! dev mode ~/about/'
 // const page = createEmptyPage().init();
 // const editor = new DocEditor();
 // editor.page = page;
-// document.body.appendChild(editor);
+// document.body.appendChild(editor);  <EditorProvider />
+
 
 const AboutPage = () => {
   const { show } = useContextMenu()
@@ -30,6 +33,7 @@ const AboutPage = () => {
     <p>
       <Link href="/">Go home</Link>
     </p>
+    <button onClick={console.log}>snapshot</button>
   </>)
 }
 

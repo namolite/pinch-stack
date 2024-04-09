@@ -18,10 +18,10 @@ const LoginForm = (props: { host: IHost | any, onClose: () => void }) => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    debug.log({ username, password })
+    // debug.log({ username, password })
     // 登录逻辑
     let verified = false
-    const api = '/test'
+    const api = '/login'
     const url = `${props.host.domain}:${props.host.port}${api}`
     // TODO Login verification(sse)
     // 全局开启在线状态

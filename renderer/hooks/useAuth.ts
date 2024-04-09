@@ -25,6 +25,12 @@ const useAuth = () => {
     }
   };
 
+  const logout = () => {
+    localStorage.removeItem('authToken');
+    delete axios.defaults.headers.common['Authorization'];
+    // 注销后的逻辑
+  }
+
   return { login };
 };
 
