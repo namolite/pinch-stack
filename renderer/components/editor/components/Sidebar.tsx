@@ -1,11 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Doc, Job } from '@blocksuite/store';
 import { useEditor } from '../context';
-
-
-import { initEditor } from '../init'
-import { DocCollection, Schema } from '@blocksuite/store'
-import { exportSnapshot } from '../dataSync'
+// import { downloadFile, uploadFile } from '@Utils/file';
 
 
 const Sidebar = () => {
@@ -28,26 +24,34 @@ const Sidebar = () => {
     return () => disposable.forEach(d => d.dispose());
   }, [provider, editor]);
 
-  const aaaa = async () => {
-    const job = new Job(provider)
-    const snapshot = await job.docToSnapshot(docs[0])
-     const data =
-      'data:text/json;charset=utf-8,' +
-      encodeURIComponent(JSON.stringify(snapshot, null, 2));
-    // TODO Feature: Encryption & Compress Binary File.
-    const anchor = document.createElement('a');
-    anchor.setAttribute('href', data);
-    anchor.setAttribute('download', `636ycoX8f8.pinch`);
-    anchor.click();
-    anchor.remove();
+  /*const handleExport = async () => {
+    try {
+      const job = new Job(provider)
+      const snapshot = await job.docToSnapshot(docs[0])
+      const data =
+        'data:text/json;charset=utf-8,' +
+        encodeURIComponent(JSON.stringify(snapshot, null, 2));
+      await downloadFile(docs[0].id + '.json', '', data)
+    } catch (error) {
+      console.error('Error exporting:', error)
+    }
   }
 
-  const bbbb = async () => {
-    // const job = new Job(provider)
+  const handleImport = async () => {
+    try {
+      const fileContent = ''
+      await uploadFile(fileContent)
+    } catch (error) {
+      console.error('Error importing:', error);
+    }
+  }*/
 
-    const data = 1
-    console.log(data)
-    // const newPage = await job.snapshotToPage(json)
+  const handleExport = async () => {
+    console.log('')
+  }
+  const handleImport = async () => {
+    console.log('')
+    // console.log(dialog.showOpenDialog({ properties: ['openFile', 'multiSelections'] }))
   }
 
 
@@ -68,8 +72,9 @@ const Sidebar = () => {
           </div>
         ))}
       </div>
-      <button onClick={aaaa}>export</button>
-      <button onClick={bbbb}>import</button>
+      <button onClick={handleExport}>export</button>
+      <br />
+      <button onClick={handleImport}>import</button>
     </div>
   );
 };

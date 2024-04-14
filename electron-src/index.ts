@@ -1,6 +1,8 @@
 // Native
 import { join } from 'path'
 import { format } from 'url'
+// import fs from 'fs-extra'
+
 
 // Packages
 import { BrowserWindow, app, ipcMain, IpcMainEvent } from 'electron'
@@ -52,6 +54,28 @@ app.on('ready', async () => {
     console.log(message)
     setTimeout(() => event.sender.send('message', 'hi from electron'), 500)
   })
+
+  // (File save & load) Recive from @
+  /*ipcMain.on('upload', async (event, fileName: string, fileContent: string) => {
+    const userPath = app.getPath('userData');
+    const filePath = join(userPath, fileName);
+    try {
+      await fs.promises.writeFile(filePath, fileContent);
+      event.sender.send('uploaded', filePath);
+    } catch (error: any) {
+      event.sender.send('file-upload-error', error.message);
+    }
+  });
+  ipcMain.on('download', async (event, fileName: string) => {
+    const userPath = app.getPath('userData');
+    const filePath = join(userPath, fileName);
+    try {
+      const fileContent = await fs.promises.readFile(filePath, 'utf-8');
+      event.sender.send('downloaded', fileContent);
+    } catch (error: any) {
+      event.sender.send('file-download-error', error.message);
+    }
+  });*/
 
   const url = isDev
     ? 'http://localhost:8000/'

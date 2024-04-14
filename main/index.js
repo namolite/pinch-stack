@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 // Native
 const path_1 = require("path");
 const url_1 = require("url");
+// import fs from 'fs-extra'
 // Packages
 const electron_1 = require("electron");
 const electron_is_dev_1 = __importDefault(require("electron-is-dev"));
@@ -52,6 +53,27 @@ electron_1.app.on('ready', async () => {
         console.log(message);
         setTimeout(() => event.sender.send('message', 'hi from electron'), 500);
     });
+    // (File save & load) Recive from @
+    /*ipcMain.on('upload', async (event, fileName: string, fileContent: string) => {
+      const userPath = app.getPath('userData');
+      const filePath = join(userPath, fileName);
+      try {
+        await fs.promises.writeFile(filePath, fileContent);
+        event.sender.send('uploaded', filePath);
+      } catch (error: any) {
+        event.sender.send('file-upload-error', error.message);
+      }
+    });
+    ipcMain.on('download', async (event, fileName: string) => {
+      const userPath = app.getPath('userData');
+      const filePath = join(userPath, fileName);
+      try {
+        const fileContent = await fs.promises.readFile(filePath, 'utf-8');
+        event.sender.send('downloaded', fileContent);
+      } catch (error: any) {
+        event.sender.send('file-download-error', error.message);
+      }
+    });*/
     const url = electron_is_dev_1.default
         ? 'http://localhost:8000/'
         : (0, url_1.format)({

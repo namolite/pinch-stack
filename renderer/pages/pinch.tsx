@@ -3,9 +3,19 @@ import { useState, useEffect } from 'react'
 
 import PinchTable from '@Components/pinch/pinchTable'
 import CustomTitle from "@Components/title";
+import FileList from "@Components/pinch/fileList";
 
 
-export default function Pinch(dump) {
+export default function Pinch() {
+  return (
+    <div>
+      <FileList />
+    </div>
+  )
+}
+
+
+const PinchNya = (dump) => {
   interface dump {
     sortBy?: number
     folder?: boolean
