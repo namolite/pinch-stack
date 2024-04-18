@@ -7,7 +7,9 @@ export async function initEditor() {
   const { collection } = provider;
   const editor = new AffineEditorContainer();
 
-  editor.doc = [...collection.docs.values()][0];
+  // editor.doc = [...collection.docs.values()][0];
+  editor.doc = Array.from(collection.docs.values())[0];
+
   editor.slots.docLinkClicked.on(({ docId }) => {
     const target = <Doc>collection.getDoc(docId);
     editor.doc = target;

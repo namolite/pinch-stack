@@ -40,8 +40,9 @@ export async function downloadFile(fileName: string, filePath: string, file: Fil
 export const userDownload = async (file: File | any, fileName: string) => {
   // TODO Feature: Encryption & Compress Binary File.
   const anchor = document.createElement('a');
+  const encodedFileName = encodeURIComponent(fileName)
   anchor.setAttribute('href', file);
-  anchor.setAttribute('download', fileName);
+  anchor.setAttribute('download', encodedFileName);
   anchor.click();
   anchor.remove();
 }

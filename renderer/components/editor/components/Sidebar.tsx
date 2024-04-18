@@ -12,7 +12,8 @@ const Sidebar = () => {
     if (!provider || !editor) return;
     const { collection } = provider;
     const updateDocs = () => {
-      setDocs([...collection.docs.values()]);
+      setDocs(Array.from(collection.docs.values()));
+      // setDocs([...collection.docs.values()]);
     };
     updateDocs();
 
@@ -65,7 +66,8 @@ const Sidebar = () => {
             key={doc.id}
             onClick={() => {
               if (editor) editor.doc = doc;
-              setDocs([...provider!.collection!.docs.values()]);
+              // setDocs([...provider!.collection!.docs.values()]);
+              setDocs(Array.from(provider!.collection!.docs.values()));
             }}
           >
             {doc.meta?.title || 'Untitled'}

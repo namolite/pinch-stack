@@ -150,6 +150,14 @@ h6 { font-size: 1.1rem }
   color: var(--font-discription);
 }
 
+.overflow-text {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 6rem;
+}
+
 
 /* workbench */
 .block {

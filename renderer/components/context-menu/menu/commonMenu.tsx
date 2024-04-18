@@ -6,14 +6,15 @@ import useInspectElement from '@Hooks/useInspectElement'
 export default function CommonMenu() {
   const MENU_ID = "default"
 
-  function inspectElement(event: React.MouseEvent) {
+  /*function inspectElement(event: React.MouseEvent) {
     console.log(event)
-    useInspectElement(event)
-  }
+
+    onClick={(e) => inspectElement(e)}
+  }*/
 
   return (
     <Menu id={MENU_ID}>
-      <Item onClick={(e) => inspectElement(e)}>
+      <Item>
         Inspect
       </Item>
       <Item onClick={null}>

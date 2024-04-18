@@ -1,0 +1,237 @@
+[
+  {
+    "type": "Directory",
+    "id": "_DIR",
+    "category": "s-folder"
+  },
+  {
+    "type": "Cloud Directory",
+    "id": "_DIR-C",
+    "category": "s-folder-cloud"
+  },
+  {
+    "type": "File",
+    "id": "_FILE",
+    "category": "s-file"
+  },
+  {
+    "type": "Unknown",
+    "id": "_UNKNWN",
+    "category": "s-unknown"
+  },
+  {
+    "type": "APK",
+    "id": "apk",
+    "category": "a-apk"
+  },
+  {
+    "type": "Binary file",
+    "id": "bin",
+    "category": "a-bin"
+  },
+  {
+    "type": "Certificate",
+    "id": "crt",
+    "category": "a-certificate"
+  },
+  {
+    "type": "Debian",
+    "id": "deb",
+    "category": "a-deb"
+  },
+  {
+    "type": "",
+    "id": "link",
+    "category": "a-link"
+  },
+  {
+    "type": "mail",
+    "id": "mail",
+    "category": "a-mail"
+  },
+  {
+    "type": "MS Executable",
+    "id": "exe",
+    "category": "a-ms-executable"
+  },
+  {
+    "type": "PDF",
+    "id": "pdf",
+    "category": "a-pdf"
+  },
+  {
+    "type": "ZIP",
+    "id": "zip",
+    "category": "a-zip"
+  },
+  {
+    "type": "RAR",
+    "id": "rar",
+    "category": "a-zip"
+  },
+  {
+    "type": "7Z",
+    "id": "7z",
+    "category": "a-zip"
+  },
+  {
+    "type": "TAR",
+    "id": "tar",
+    "category": "a-zip"
+  },
+  {
+    "type": "TXZ",
+    "id": "txz",
+    "category": "a-zip"
+  },
+  {
+    "type": "STD",
+    "id": "std",
+    "category": "a-zip"
+  },
+  {
+    "type": "MP3",
+    "id": "mp3",
+    "category": "m-audio"
+  },
+  {
+    "type": "Waveform Audio",
+    "id": "wav",
+    "category": "m-audio"
+  },
+  {
+    "type": "OGG",
+    "id": "ogg",
+    "category": "m-audio"
+  },
+  {
+    "type": "Free Lossless Audio Codec",
+    "id": "flac",
+    "category": "m-audio"
+  },
+  {
+    "type": "M4A",
+    "id": "7z",
+    "category": "m-audio"
+  },
+  {
+    "type": "Flash Animation",
+    "id": "fla",
+    "category": "m-flash"
+  },
+  {
+    "type": "MP4",
+    "id": "mp4",
+    "category": "m-video"
+  },
+  {
+    "type": "AVI",
+    "id": "avi",
+    "category": "m-video"
+  },
+  {
+    "type": "MKV",
+    "id": "mkv",
+    "category": "m-video"
+  },
+  {
+    "type": "Adobe Illustrator",
+    "id": "ai",
+    "category": "n-adobe-ai"
+  },
+  {
+    "type": "Adobe Photoshop",
+    "id": "psd",
+    "category": "n-adobe-ps"
+  },
+  {
+    "type": "Power Point",
+    "id": "pptx",
+    "category": "n-ms-ppt"
+  },
+  {
+    "type": "Word",
+    "id": "docx",
+    "category": "n-ms-word"
+  },
+  {
+    "type": "C++",
+    "id": "cpp",
+    "category": "t-cpp"
+  },
+  {
+    "type": "EPUB",
+    "id": "epub",
+    "category": "t-epub"
+  },
+  {
+    "type": "Java",
+    "id": "java",
+    "category": "t-java"
+  },
+  {
+    "type": "Java Class",
+    "id": "class",
+    "category": "t-java"
+  },
+  {
+    "type": "JavaScript",
+    "id": "js",
+    "category": "t-js"
+  },
+  {
+    "type": "Markdown",
+    "id": "md",
+    "category": "t-md"
+  },
+  {
+    "type": "Markdown",
+    "id": "markdown",
+    "category": "t-md"
+  },
+  {
+    "type": "Python",
+    "id": "py",
+    "category": "t-py"
+  },
+  {
+    "type": "Ruby",
+    "id": "ru",
+    "category": "t-ruby"
+  },
+  {
+    "type": "LaTeX",
+    "id": "tex",
+    "category": "t-tex"
+  },
+  {
+    "type": "TypeScript",
+    "id": "ts",
+    "category": "t-ts"
+  },
+  {
+    "type": "TXT",
+    "id": "txt",
+    "category": "t-txt"
+  },
+  {
+    "type": "XML",
+    "id": "xml",
+    "category": "t-xml"
+  },
+  {
+    "type": "HTML",
+    "id": "html",
+    "category": "t-code"
+  },
+  {
+    "type": "CSS",
+    "id": "css",
+    "category": "t-code2"
+  },
+  {
+    "type": "C",
+    "id": "c",
+    "category": "t-code2"
+  }
+]

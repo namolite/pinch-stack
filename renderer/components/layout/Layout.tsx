@@ -35,11 +35,12 @@ const Layout = ({ children }: Props) => {
 
   const handleMenuOptions = (opt) => {
     const createOptions = ((opt) => {
-      { }
-    })(opt).then((opts) => {
-      setRefresh(oldKey => oldKey + 1)
-    })
+
+      const opts = [];
+      setRefresh(oldKey => oldKey + 1);
+    })(opt);
   }
+
   console.log(data)
 
   return (

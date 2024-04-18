@@ -9,7 +9,9 @@ import FileList from "@Components/pinch/fileList";
 export default function Pinch() {
   return (
     <div>
-      <FileList />
+      <FileList
+        host='http://localhost:23333'
+      />
     </div>
   )
 }

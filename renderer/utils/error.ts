@@ -1,0 +1,5 @@
+
+
+const error = ''
+
+export { error }

@@ -1,4 +1,4 @@
-
+// @ts-nocheck
 /**
  *  Electron window control menu
  */

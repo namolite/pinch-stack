@@ -12,7 +12,7 @@ const useInspectElement = () => {
     event.preventDefault();
     debug.log(event)
     // ipcRenderer.send('inspect-element', { x: event.clientX, y: event.clientY });
-    window.electronAPI.inspectElement('inspect-element', { x: event.clientX, y: event.clientY })
+    // window.electronAPI.inspectElement('inspect-element', { x: event.clientX, y: event.clientY })
   };
 
   return handleInspectElement;

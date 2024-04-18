@@ -34,6 +34,14 @@ contextBridge.exposeInMainWorld('electronAPI', {
     if (validChannels.includes(channel)) {
       ipcRenderer.removeListener(channel, func)
     }
+  },
+  download: async (url: string) => {
+    try {
+      const response = await ipcRenderer.invoke('download', { url });
+      return response;
+    } catch (error: any) {
+      throw new Error(error);
+    }
   }
 })
 

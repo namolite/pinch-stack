@@ -1,6 +1,9 @@
+// @ts-ignore
+// @ts-nocheck
 import { DocCollection, type Y, Schema, BlobStorage } from '@blocksuite/store';
 import { client } from './db';
 import { AffineSchemas } from '@blocksuite/blocks';
+
 
 export class CollectionProvider {
   collection!: DocCollection;

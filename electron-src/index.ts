@@ -8,6 +8,8 @@ import { format } from 'url'
 import { BrowserWindow, app, ipcMain, IpcMainEvent } from 'electron'
 import isDev from 'electron-is-dev'
 import prepareNext from 'electron-next'
+import { download } from 'electron-dl'
+import electronDl from 'electron-dl'
 
 // Prepare the renderer once the app is ready
 app.on('ready', async () => {
@@ -23,6 +25,19 @@ app.on('ready', async () => {
       contextIsolation: true,
       preload: join(__dirname, 'preload.js'),
     },
+  })
+
+  ipcMain.on('download', async (_event, { url }) => {
+    const win = BrowserWindow.getFocusedWindow();
+    try {
+      console.log(await download(win, url));
+    } catch (error) {
+      if (error instanceof electronDl.CancelError) {
+        console.info('item.cancel() was called');
+      } else {
+        console.error(error);
+      }
+    }
   })
 
   // (Window control) Recive from @Components/layout/titleBar
@@ -76,6 +91,9 @@ app.on('ready', async () => {
       event.sender.send('file-download-error', error.message);
     }
   });*/
+
+  
+
 
   const url = isDev
     ? 'http://localhost:8000/'

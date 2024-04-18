@@ -1,11 +1,11 @@
 import React, { useEffect, useRef } from 'react';
 import '@blocksuite/presets/themes/affine.css';
 import { createEmptyDoc, PageEditor } from '@blocksuite/presets'
-import { AffineSchemas } from '@blocksuite/blocks';
-import { Schema, DocCollection } from '@blocksuite/store';
-import { Text } from '@blocksuite/store'
-import { IndexeddbPersistence } from 'y-indexeddb'
-import { Job } from '@blocksuite/store'
+// import { AffineSchemas } from '@blocksuite/blocks';
+// import { Schema, DocCollection } from '@blocksuite/store';
+// import { Text } from '@blocksuite/store'
+// import { IndexeddbPersistence } from 'y-indexeddb'
+// import { Job } from '@blocksuite/store'
 
 
 const EditorProvider = () => {

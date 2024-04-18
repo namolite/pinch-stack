@@ -1,5 +1,5 @@
-import { DocCollection, type BlockSnapshot, type Doc, Job } from '@blocksuite/store'
-import { ZipTransformer } from '@blocksuite/blocks'
+// import { DocCollection, type BlockSnapshot, type Doc, Job } from '@blocksuite/store'
+// import { ZipTransformer } from '@blocksuite/blocks'
 import { provider } from './provider/provider'
 
 // export const workspaces = new Map<string, DocCollection>()

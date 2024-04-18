@@ -35,6 +35,15 @@ electron_1.contextBridge.exposeInMainWorld('electronAPI', {
         if (validChannels.includes(channel)) {
             electron_1.ipcRenderer.removeListener(channel, func);
         }
+    },
+    download: async (url) => {
+        try {
+            const response = await electron_1.ipcRenderer.invoke('download', { url });
+            return response;
+        }
+        catch (error) {
+            throw new Error(error);
+        }
     }
 });
 // Since we disabled nodeIntegration we can reintroduce

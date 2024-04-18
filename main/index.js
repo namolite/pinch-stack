@@ -11,6 +11,8 @@ const url_1 = require("url");
 const electron_1 = require("electron");
 const electron_is_dev_1 = __importDefault(require("electron-is-dev"));
 const electron_next_1 = __importDefault(require("electron-next"));
+const electron_dl_1 = require("electron-dl");
+const electron_dl_2 = __importDefault(require("electron-dl"));
 // Prepare the renderer once the app is ready
 electron_1.app.on('ready', async () => {
     await (0, electron_next_1.default)('./renderer');
@@ -24,6 +26,20 @@ electron_1.app.on('ready', async () => {
             contextIsolation: true,
             preload: (0, path_1.join)(__dirname, 'preload.js'),
         },
+    });
+    electron_1.ipcMain.on('download', async (_event, { url }) => {
+        const win = electron_1.BrowserWindow.getFocusedWindow();
+        try {
+            console.log(await (0, electron_dl_1.download)(win, url));
+        }
+        catch (error) {
+            if (error instanceof electron_dl_2.default.CancelError) {
+                console.info('item.cancel() was called');
+            }
+            else {
+                console.error(error);
+            }
+        }
     });
     // (Window control) Recive from @Components/layout/titleBar
     electron_1.ipcMain.on('windowMinimize', () => {
