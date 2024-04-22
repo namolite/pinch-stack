@@ -1,11 +1,14 @@
+import NyaTime from "./widget/nyaTime"
+import NyaBar from "./widget/nyaBar"
 
 
-const SideListUtils = () => {
+const SideListWidget = () => {
   return (
-    <div className="px-2">
-      {'< previous'}
+    <div className="px-1">
+      <NyaTime />
+      <NyaBar />
     </div>
   )
 }
 
-export default SideListUtils
+export default SideListWidget

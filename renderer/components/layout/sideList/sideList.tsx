@@ -1,6 +1,6 @@
 import CardDivider from "@Components/layout/sideList/cardDivider"
 import SideListContent from "@Components/layout/sideList/content/index"
-import SideListUtils from "./sideListUtils"
+import SideListWidget from "./sideListUtils"
 
 
 export default function SideList() {
@@ -10,7 +10,7 @@ export default function SideList() {
         <div>
           <SideListContent />
         </div>
-        <SideListUtils />
+        <SideListWidget />
       </CardDivider>
     </aside>
   )
