@@ -5,6 +5,7 @@ import { settingAtom } from '@Utils/states'
 import SettingAccount from './setting/settingAccount'
 import SettingAppearance from './setting/settingAppearance'
 import SettingInfo from './setting/settingInfo'
+import SettingPlugins from './setting/settingPlugins'
 import SettingSecurity from './setting/settingSecurity'
 import SettingSystem from './setting/settingSystem'
 
@@ -21,6 +22,8 @@ const Setting = () => {
       return <SettingAppearance />
     case 'info':
       return <SettingInfo />
+    case 'plugins':
+      return <SettingPlugins />
     case 'security':
       return <SettingSecurity />
     case 'system':

@@ -1,9 +1,11 @@
 import React, { ReactNode } from "react";
 import { useState, useEffect } from 'react'
+import { useAtom } from "jotai";
 
 import PinchTable from '@Components/pinch/pinchTable'
 import CustomTitle from "@Components/title";
 import FileList from "@Components/pinch/fileList";
+
 
 
 export default function Pinch() {
@@ -24,7 +26,6 @@ const PinchNya = (dump) => {
     col?: number
     rol?: number
   }
-
   /*sortBy={0}
   *folder={0}
   *col={setting.col}

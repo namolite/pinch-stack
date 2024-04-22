@@ -5,7 +5,7 @@ import { format } from 'url'
 
 
 // Packages
-import { BrowserWindow, app, ipcMain, IpcMainEvent } from 'electron'
+import { BrowserWindow, app, ipcMain, IpcMainEvent, powerMonitor } from 'electron'
 import isDev from 'electron-is-dev'
 import prepareNext from 'electron-next'
 import { download } from 'electron-dl'
@@ -92,7 +92,13 @@ app.on('ready', async () => {
     }
   });*/
 
-  
+  powerMonitor.on('on-ac', () => {
+    mainWindow.webContents.send('battery-status', 'AC')
+  })
+
+  powerMonitor.on('on-battery', () => {
+    mainWindow.webContents.send('battery-status', 'Battery')
+  })
 
 
   const url = isDev

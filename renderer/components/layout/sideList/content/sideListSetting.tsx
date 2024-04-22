@@ -24,11 +24,12 @@ const SideListSetting: React.FC = () => {
 
   // const items: IOption[] = require('@Data/setting_options.json')
   const menuItems: MenuItem[] = [
-    { id: 1, label: 'Appearance', i: 'info' },
-    { id: 2, label: 'Keyboard sh...', i: 'system' },
-    { id: 3, label: 'Plugins', i: 'security' },
-    { id: 4, label: 'Pricing Plans', i: 'appearance' },
-    { id: 5, label: 'About AFFINE', i: 'account' },
+    { id: 1, label: 'Information', i: 'info' },
+    { id: 2, label: 'System', i: 'system' },
+    { id: 3, label: 'Plugins', i: 'plugins' },
+    { id: 4, label: 'Appearance', i: 'appearance' },
+    { id: 5, label: 'Security', i: 'security' },
+    { id: 6, label: 'Account', i: 'account' },
   ];
 
   return (

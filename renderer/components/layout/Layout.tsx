@@ -2,7 +2,7 @@ import React, { ReactNode } from 'react'
 import { useState, useEffect } from 'react'
 
 import Meta from '@Components/meta'
-import Option from '@Components/layout/Option'
+import OptionsContainer from './options/options'
 import SideList from '@Components/layout/sideList/sideList'
 import TitleBar from '@Components/layout/page/titleBar'
 import PageContainer from '@Components/layout/page/pageContainer'
@@ -18,49 +18,14 @@ type Props = {
 
 
 const Layout = ({ children }: Props) => {
-  const [data, setData] = useState([])
-  const [refresh, setRefresh] = useState(0)
-
-  useEffect(() => {
-    async function fetchMenuOptions() {
-      const menuOptions = await getMenuOptions()
-      setData(menuOptions)
-    }
-    fetchMenuOptions()
-  }, [refresh])
-
-  // BUG hard coded
-  const getMenuOptions = () => require('@Data/options')
-  const usr = require('@Data/options_usr')
-
-  const handleMenuOptions = (opt) => {
-    const createOptions = ((opt) => {
-
-      const opts = [];
-      setRefresh(oldKey => oldKey + 1);
-    })(opt);
-  }
-
-  console.log(data)
-
+  // const getMenuOptions = () => require('@Data/options')
   return (
     <div>
       <Meta />
       <header>
         <nav className='menu w-14 h-full fixed text-gray-600'>
           <div className='h-full flex flex-col content-center justify-between'>
-            <div>
-              <div>
-                a
-              </div>
-            </div>
-            <div className='menu-options flex flex-col absolute'>
-              <Option props={data} />
-            </div>
-            <div className='menu-optons flex flex-col pb-6'>
-              <Option props={usr} />
-              <div></div>
-            </div>
+            <OptionsContainer />
           </div>
         </nav>
       </header>

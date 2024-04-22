@@ -8,7 +8,7 @@ const PageContainer = ({ children }: Props) => (
   <main>
     <div className='children absolute'>
       <div className="mainpage fixed top-0 h-full p-2">
-        <div className="mainpage-inner rounded-lg h-full w-full">
+        <div className="mainpage-inner rounded-lg h-full w-full overflow-y-auto relative">
           {children}
         </div>
       </div>

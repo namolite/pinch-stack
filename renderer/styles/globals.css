@@ -61,9 +61,15 @@
   background-color: var(--sidelist-inner-background);
 }
 
+.sidelist-bar {
+  background-color: var(--sidelist-inner-background);
+}
+
 .sidelist-bar, .title-bar {
+  background-color: var(--sidelist-inner-background);
   height: 50px;
   border-bottom-width: 2px;
+  z-index: 50;
 }
 
 .sidelist-bar-bg {
@@ -158,6 +164,10 @@ h6 { font-size: 1.1rem }
   max-width: 6rem;
 }
 
+.rotating {
+  animation: rotate 4s linear infinite;
+}
+
 
 /* workbench */
 .block {
@@ -177,3 +187,17 @@ h6 { font-size: 1.1rem }
   width: 16px;
   height: 16px;
 }
+
+
+
+
+/* animated */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+

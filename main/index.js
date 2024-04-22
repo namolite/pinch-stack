@@ -90,6 +90,12 @@ electron_1.app.on('ready', async () => {
         event.sender.send('file-download-error', error.message);
       }
     });*/
+    electron_1.powerMonitor.on('on-ac', () => {
+        mainWindow.webContents.send('battery-status', 'AC');
+    });
+    electron_1.powerMonitor.on('on-battery', () => {
+        mainWindow.webContents.send('battery-status', 'Battery');
+    });
     const url = electron_is_dev_1.default
         ? 'http://localhost:8000/'
         : (0, url_1.format)({
