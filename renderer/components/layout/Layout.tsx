@@ -34,7 +34,7 @@ const Layout = ({ children }: Props) => {
 
       <PageContainer>
         <TitleBar />
-        <div className='absolute m-2 w-full'>
+        <div className='absolute p-2 w-full'>
           {children}
         </div>
         <footer>

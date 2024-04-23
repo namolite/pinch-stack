@@ -22,6 +22,8 @@
   --sidelist-bar-button-active: #fbfbfb;
   --sidelist-bar-button-active-text: #636363;
   --mainpage-inner-background: #fefefe;
+
+  --calendar-background-gray: rgba(242, 242, 242, 0.3);
 }
 
 /* layout */
@@ -201,3 +203,7 @@ h6 { font-size: 1.1rem }
   }
 }
 
+
+
+/* some components */
+.c-bg-g {background-color: var(--calendar-background-gray);}

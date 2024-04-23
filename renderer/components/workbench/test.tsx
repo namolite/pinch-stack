@@ -6,8 +6,10 @@ import BlockSplit from '@Components/workbench/blockSplit'
 
 import BlockImage from "@Components/workbench/blocks/image"
 import BlockText from "@Components/workbench/blocks/text"
+import ReactiveCalendar from '@Components/calendar'
 
 import notification from '@Utils/notifications'
+
 
 const IndexInner = () => {
   useEffect(() => {
@@ -26,12 +28,16 @@ const IndexInner = () => {
   }
 
   const dummyData = [
-    {'type': BlockText, 'content': ['dadasdasd', 'sfsdfsdfsfs', 'sffsdfsdfsf'], 'style': {'background': 1}},
-    {'type': BlockImage, 'content': {'width': 100, 'height': 100, 'src': '/images/test_1.jpg', 'alt': '嘤嘤嘤'}, 'style': {'background': 1}}
+    { 'type': BlockText, 'content': ['dadasdasd', 'sfsdfsdfsfs', 'sffsdfsdfsf'], 'style': { 'background': 1 } },
+    { 'type': BlockImage, 'content': { 'width': 100, 'height': 100, 'src': '/images/test_1.jpg', 'alt': '嘤嘤嘤' }, 'style': { 'background': 1 } }
   ]
+
 
   return (
     <>
+      <div className='px-1 justify-center'>
+        <ReactiveCalendar />
+      </div>
       <h1>Dashboard</h1><h2>Dashboard</h2><h3>Dashboard</h3><h4>Dashboard</h4><h5>Dashboard</h5><h6>Dashboard</h6>
       <br />
       <p>{'<p>test plain text</p>'}</p><span>{'<span>test plain text</span>'}</span>
