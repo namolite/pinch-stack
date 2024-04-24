@@ -69,7 +69,7 @@
     ],
     "win": {
       "target": "nsis",
-      "icon": "renderer/out/images/icons/choco.ico"
+      "icon": "renderer/out/images/icons/pinch.ico"
     },
     "electronDist": "node_modules/electron/dist"
   },
