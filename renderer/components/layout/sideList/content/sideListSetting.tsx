@@ -11,8 +11,9 @@ type MenuItem = {
 
 const SideListSetting: React.FC = () => {
   const [selectedTab, setSelectedTab] = useAtom(settingAtom)
-  const handleChangeTab = (tab: string) => {
+  const handleChangeTab = (tab: string, itemId: number) => {
     setSelectedTab(tab)
+    setActiveItem(itemId)
   }
 
   const [activeMode, setActiveMode] = useState('All')
@@ -33,23 +34,28 @@ const SideListSetting: React.FC = () => {
   ];
 
   return (
-    <div className="w-48 bg-gray-200 rounded">
-      <ul>
+    <div className="pt-6">
+      <ul className="flex flex-col">
         {menuItems.map(item => (
-          <li
+          <div
             key={item.id}
-            className={`flex items-center px-4 py-2 cursor-pointer ${
-              activeItem === item.id ? 'bg-gray-400' : 'hover:bg-gray-300'
-            }`}
-            onClick={() => handleChangeTab(item.i)}
+            className="flex flex-col pt-1 px-1"
           >
-            {item.label}
-          </li>
+            <li
+              className={`flex items-center py-0.5 cursor-pointer ${activeItem === item.id ? 'sidelist-option-active' : 'sidelist-option'}`}
+              onClick={() => handleChangeTab(item.i, item.id)}
+            >
+              <div className="px-1 pb-0.5">
+                <a className="px-4 text-sm">
+                  <span>{item.label}</span>
+                </a>
+              </div>
+            </li>
+          </div>
         ))}
       </ul>
     </div>
   );
 };
-
 
 export default SideListSetting

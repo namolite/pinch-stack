@@ -21,6 +21,10 @@
   --sidelist-bar-button-hover: rgb(244, 244, 245);
   --sidelist-bar-button-active: #fbfbfb;
   --sidelist-bar-button-active-text: #636363;
+  --sidelist-option-hover: rgba(0, 0, 0, 0.02);
+  --sidelist-option-text: #717171;
+  --sidelist-option-active-background: rgba(0, 0, 0, 0.06);
+  --sidelist-option-active-text: rgb(29, 27, 22);
   --mainpage-inner-background: #fefefe;
 
   --calendar-background-gray: rgba(242, 242, 242, 0.3);
@@ -93,6 +97,22 @@
   color: var(--sidelist-bar-button-active-text);
   background-color: var(--sidelist-bar-button-active);
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.sidelist-option {
+  font-weight: 700;
+  color: var(--sidelist-option-text);
+}
+
+.sidelist-option:hover {
+  background-color: var(--sidelist-option-hover);
+}
+
+.sidelist-option-active {
+  font-weight: 700;
+  color: var(--sidelist-option-active-text);
+  background-color: var(--sidelist-option-active-background);
+  border-radius: 6px;
 }
 
 .children {

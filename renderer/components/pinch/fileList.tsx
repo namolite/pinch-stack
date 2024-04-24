@@ -91,8 +91,7 @@ const FileList = (props: { host: string }) => {
 
 
   return (
-    <FileNav position='a'>
-      <div onClick={downloadFile('http://localhost:23333/download/a.zip')}>aaaaaaa</div>
+    <FileNav position=''>
       <ul className="flex flex-wrap">
         {fileList.map(file => (
           <li key={file.id} className='flex m-4 w-24 items-center justify-center'>
@@ -126,6 +125,7 @@ const FileList = (props: { host: string }) => {
           </li>
         ))}
       </ul>
+      <div onClick={downloadFile('http://localhost:23333/download/a.zip')}>{'[test dl link]'}</div>
     </FileNav>
   );
 };

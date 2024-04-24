@@ -1,6 +1,7 @@
 import React, { ReactNode } from "react";
 import { useState, useEffect } from 'react'
-import { useAtom } from "jotai";
+import { useAtom } from "jotai"
+import { Breadcrumb } from 'rsuite'
 
 import PinchTable from '@Components/pinch/pinchTable'
 import CustomTitle from "@Components/title";
@@ -11,6 +12,10 @@ import FileList from "@Components/pinch/fileList";
 export default function Pinch() {
   return (
     <div>
+      <Breadcrumb>
+        <Breadcrumb.Item href="/pinch">Workspace</Breadcrumb.Item>
+        <Breadcrumb.Item active>{'{username}'}</Breadcrumb.Item>
+      </Breadcrumb>
       <FileList
         host='http://localhost:23333'
       />
@@ -32,7 +37,7 @@ const PinchNya = (dump) => {
   *rol={setting.rol}
   *contents='dasdad'
   */
-  const setting = {"col": 3, "rol": 4}
+  const setting = { "col": 3, "rol": 4 }
   const crewList = require('@Data/crewlist')
 
   const [data, setData] = useState([])
@@ -41,9 +46,9 @@ const PinchNya = (dump) => {
 
   return (
     <div className="">
-      <CustomTitle customTitle={customTitle} /> 
+      <CustomTitle customTitle={customTitle} />
       <div className="">
-        <PinchTable 
+        <PinchTable
           props={setting.col} crewList={crewList}
         />
       </div>

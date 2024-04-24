@@ -38,6 +38,7 @@ const IndexInner = () => {
       <div className='px-1 justify-center'>
         <ReactiveCalendar />
       </div>
+      
       <h1>Dashboard</h1><h2>Dashboard</h2><h3>Dashboard</h3><h4>Dashboard</h4><h5>Dashboard</h5><h6>Dashboard</h6>
       <br />
       <p>{'<p>test plain text</p>'}</p><span>{'<span>test plain text</span>'}</span>
