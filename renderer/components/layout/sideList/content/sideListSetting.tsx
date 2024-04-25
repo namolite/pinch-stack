@@ -31,6 +31,7 @@ const SideListSetting: React.FC = () => {
     { id: 4, label: 'Appearance', i: 'appearance' },
     { id: 5, label: 'Security', i: 'security' },
     { id: 6, label: 'Account', i: 'account' },
+    { id: 7, label: 'About Pinch Stack', i: 'about' },
   ];
 
   return (
