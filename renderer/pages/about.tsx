@@ -19,7 +19,7 @@ const customTitle = 'pinch! dev mode ~/about/'
 // document.body.appendChild(editor);  <EditorProvider />
 
 const Editor = dynamic(() => import('@Components/editor/editor'), {
-  ssr: false, // 设置 ssr 选项为 false
+  ssr: false,
 })
 
 const AboutPage = () => {

@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 
-import { userDownload } from '@Utils/file'
 import debug from '@Utils/debug'
 
 import format from '@Data/format.json'
@@ -52,43 +51,21 @@ const FileList = (props: { host: string }) => {
     fetchData(props.host);
   }, []);
 
-  const handleFileDownloadd = async (fileName) => {
+  const handleFileDownload = async (fileName) => {
+    const url = `${props.host}/download/${fileName}`
     try {
-      const res = await axios.get(`${props.host}/download/${fileName}`, {
-        responseType: 'blob'
-      });
-      userDownload(res.data, fileName);
+      const response = await axios.get(url, { responseType: 'blob' });
+      const blob = new Blob([response.data]);
+      const downloadLink = document.createElement('a');
+      downloadLink.href = window.URL.createObjectURL(blob);
+      downloadLink.setAttribute('download', fileName);
+      document.body.appendChild(downloadLink);
+      downloadLink.click();
+      document.body.removeChild(downloadLink);
     } catch (error) {
       console.error('Error downloading file:', error);
     }
-  };
-
-  const handleFileDownload = async (fileName) => {
-    try {
-      const response = await fetch(`/api/file?url=${props.host}/download/${fileName}`);
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-      const data = await response.json();
-      setMessage(data.message);
-    } catch (error) {
-      console.error('There was a problem with the fetch operation:', error);
-    }
   }
-
-  const downloadFile = (url) => async () => {
-    try {
-      const response = await window.electron.downloadFile(url);
-      if (response.success) {
-        console.log('文件下载成功！保存路径:', response.filePath);
-      } else {
-        console.error('文件下载失败:', response.error);
-      }
-    } catch (error) {
-      console.error('下载文件时出错:', error);
-    }
-  }
-
 
   return (
     <FileNav position=''>
@@ -125,7 +102,6 @@ const FileList = (props: { host: string }) => {
           </li>
         ))}
       </ul>
-      <div onClick={downloadFile('http://localhost:23333/download/a.zip')}>{'[test dl link]'}</div>
     </FileNav>
   );
 };

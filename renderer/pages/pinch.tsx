@@ -8,7 +8,6 @@ import CustomTitle from "@Components/title";
 import FileList from "@Components/pinch/fileList";
 
 
-
 export default function Pinch() {
   return (
     <div>
