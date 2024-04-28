@@ -1,15 +1,20 @@
+import { useState, createContext } from 'react'
+
 import { EditorProvider } from './components/EditorProvider';
 import Sidebar from './components/Sidebar';
-import TopBar from './components/TopBar';
+// import TopBar from './components/TopBar';
 import EditorContainer from './components/EditorContainer';
 
+
 const Editor = () => {
+
   return (
     <EditorProvider>
       <div className="app">
-        <Sidebar />
+        <div className='docBar fixed'>
+          <Sidebar />
+        </div>
         <div className="main-content">
-          <TopBar />
           <EditorContainer />
         </div>
       </div>
@@ -17,4 +22,4 @@ const Editor = () => {
   );
 }
 
-export default Editor;
+export default Editor

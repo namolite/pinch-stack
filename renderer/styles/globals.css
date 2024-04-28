@@ -211,6 +211,12 @@ h6 { font-size: 1.1rem }
 }
 
 
+/* editor */
+.docBar {
+  top: 50px;
+  left: 50px;
+  z-index: 500;
+}
 
 
 /* animated */

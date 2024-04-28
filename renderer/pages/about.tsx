@@ -29,8 +29,6 @@ const AboutPage = () => {
   return(
   <>
     <CustomTitle customTitle={customTitle} />
-    <h1>About</h1>
-    <p onContextMenu={showEditorMenu}>This is the about page</p>
     <div className='overflow-visible'>
       <Editor />
     </div>
