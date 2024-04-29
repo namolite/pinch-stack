@@ -109,7 +109,7 @@ const Sidebar = () => {
   }
 
   return (
-    <div className="sidebar">
+    <div className="sidebar invisible">
       <div className="header">All Docs</div>
       <div className="doc-list">
         {docs.map(doc => (
@@ -133,11 +133,6 @@ const Sidebar = () => {
       <br />
       <button onClick={nnn}>nnn</button>
       <br />
-      <button onClick={newDoc}>newDoc</button>
-      <br />
-      <button onClick={removeDoc}>removeDoc</button>
-      <br />
-      <button onClick={viewList}>viewList</button>
     </div>
   );
 };

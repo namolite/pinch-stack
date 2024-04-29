@@ -21,13 +21,15 @@
   --sidelist-bar-button-hover: rgb(244, 244, 245);
   --sidelist-bar-button-active: #fbfbfb;
   --sidelist-bar-button-active-text: #636363;
-  --sidelist-option-hover: rgba(0, 0, 0, 0.02);
+  --sidelist-option-hover: rgba(0, 0, 0, 0.04);
   --sidelist-option-text: #717171;
-  --sidelist-option-active-background: rgba(0, 0, 0, 0.06);
+  --sidelist-option-active-background: rgba(0, 0, 0, 0.1);
   --sidelist-option-active-text: rgb(29, 27, 22);
   --mainpage-inner-background: #fefefe;
 
   --calendar-background-gray: rgba(242, 242, 242, 0.3);
+  --document-bar-option: #535353;
+  --document-bar-option-active: #414141;
 }
 
 /* layout */
@@ -101,10 +103,11 @@
 
 .sidelist-option {
   font-weight: 700;
+  border-radius: 6px;
   color: var(--sidelist-option-text);
 }
 
-.sidelist-option:hover {
+.sidelist-option:hover, .doc-bar:hover {
   background-color: var(--sidelist-option-hover);
 }
 
@@ -177,6 +180,7 @@ h6 { font-size: 1.1rem }
   font-size: .7rem;
   color: var(--font-discription);
 }
+.text-label { font-size: .75rem; }
 
 .overflow-text {
   display: inline-block;
@@ -212,7 +216,15 @@ h6 { font-size: 1.1rem }
 
 
 /* editor */
-.docBar {
+.doc-bar {
+  font-weight: 700;
+  border-radius: 6px;
+  color: var(--document-bar-option);
+}
+
+.doc-active {
+  background-color: var(--sidelist-option-active-background)!important;
+  color: var(--document-bar-option-active);
 }
 
 
