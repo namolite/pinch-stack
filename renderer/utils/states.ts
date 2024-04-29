@@ -14,3 +14,8 @@ export const settingAtom = atom<string>('info')
 export const authAtom = atom<string>('login')
 
 export const connectionAtom = atom<string>('Offline')
+
+export const docListDataAtom = atom({
+  provider: null,
+  editor: null
+})

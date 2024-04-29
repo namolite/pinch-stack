@@ -11,7 +11,7 @@ const Editor = () => {
   return (
     <EditorProvider>
       <div className="app">
-        <div className='docBar fixed'>
+        <div className=''>
           <Sidebar />
         </div>
         <div className="main-content">

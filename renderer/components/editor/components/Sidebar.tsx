@@ -1,18 +1,18 @@
 import { useEffect, useState } from 'react';
-import { Doc, Job, Y } from '@blocksuite/store';
+import { Doc, Job } from '@blocksuite/store';
 import axios from 'axios'
 import { createEmptyDoc, PageEditor } from '@blocksuite/presets';
-
+import { useAtom } from 'jotai'
+import { docListDataAtom } from '@Utils/states';
 import { useEditor } from '../context';
+import debug from '@Utils/debug';
 
 
 const Sidebar = () => {
-  // const { provider, editor } = useEditor()!;
-  const editorData = useEditor();
-  const provider = editorData?.provider;
-  const editor = editorData?.editor;
+  const { provider, editor } = useEditor()!;
   
   const [docs, setDocs] = useState<Doc[]>([]);
+  const [editorAtom, setEditorAtom] = useAtom(docListDataAtom)
 
   useEffect(() => {
     if (!provider || !editor) return;
@@ -28,10 +28,21 @@ const Sidebar = () => {
       editor.slots.docLinkClicked.on(updateDocs),
     ];
 
-    return () => disposable.forEach(d => d.dispose());
-  }, [provider, editor]);
+    // Doc List Sync
+  const updateDocListData = () => {
+    const docListData = {
+      provider: provider,
+      editor: editor
+    }
+    setEditorAtom(docListData)
+  }
+  updateDocListData()
 
-  const handleExport = async () => {
+    
+    return () => disposable.forEach(d => d.dispose())
+  }, [provider, editor, setEditorAtom]);
+
+  /*const handleExport = async () => {
     const host = 'http://localhost:23333'
     try {
       const job = new Job(provider)
@@ -62,10 +73,9 @@ const Sidebar = () => {
       console.error('Error importing:', error);
     }
   }
+  */
 
   const nnn = () => {
-    // const yDoc = new Y.doc({ gc: false })
-    // console.log(docs)
     const d = provider.collection.docs
     console.log(d)
   }
@@ -98,7 +108,6 @@ const Sidebar = () => {
     console.log(Array.from(provider!.collection!.docs.values()))
   }
 
-
   return (
     <div className="sidebar">
       <div className="header">All Docs</div>
@@ -120,10 +129,6 @@ const Sidebar = () => {
       <div>
         <div>New Doc</div>
       </div>
-      <button onClick={handleExport}>export</button>
-      <br />
-      <button onClick={handleImport}>import</button>
-      <br />
       <button onClick={(() => { console.log(docs) })}>list</button>
       <br />
       <button onClick={nnn}>nnn</button>
