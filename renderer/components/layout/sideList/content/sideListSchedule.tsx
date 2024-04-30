@@ -3,6 +3,7 @@ import { docListDataAtom } from "@Utils/states"
 import { Doc, Job } from "@blocksuite/store"
 import { useState, useEffect } from "react"
 import axios from "axios"
+import { Loader } from 'rsuite'
 
 const SideListSchedule = () => {
   const [loading, setLoading] = useState(true)
@@ -69,6 +70,7 @@ const SideListSchedule = () => {
   }
 
   const removeDoc = () => {
+    // TODO: Delete Doc
     // provider.collection.removeDoc("9AIqG31OEc")
   }
 
@@ -76,7 +78,7 @@ const SideListSchedule = () => {
     console.log(Array.from(provider!.collection!.docs.values()))
   }
 
-  // Fix: Auto Renderer When Data Update
+  // FIXME: Auto Renderer When Data Update
   return (
     <div className="flex flex-col pt-1 px-1">
       <div>
@@ -105,21 +107,32 @@ const SideListSchedule = () => {
           )))}
       </div>
       <div>
-        <div>
-          <span>{'Menu'}</span>
+        <div className="px-1">
+          <span className="text-label font-bold text-gray-500">{'Menu'}</span>
         </div>
-        <button onClick={handleExport}>export</button>
-        <br />
-        <button onClick={handleImport}>import</button>
-        <br />
-        <button onClick={newDoc}>newDoc</button>
-        <br />
-        <button onClick={removeDoc}>removeDoc</button>
-        <br />
-        <button onClick={viewList}>viewList</button>
+        <DocMenuOpion id={'Export'} hook={handleExport} />
+        <DocMenuOpion id={'Sync'} hook={handleImport} />
+        <DocMenuOpion id={'New Docment'} hook={newDoc} />
+        <DocMenuOpion id={'Remove Document'} hook={removeDoc} />
+        <DocMenuOpion id={'View List'} hook={viewList} />
+      </div>
+      <div className="flex w-full min-h-full items-center justify-center">
+        <Loader className=" items-center justify-center" content="Loading..." vertical />
       </div>
     </div>
   )
 }
+
+const DocMenuOpion = (props: { id, hook }) => (
+  <div
+    className={`doc-item flex items-center my-1 py-1 doc-bar`}
+    key={props.id}
+    onClick={props.hook}
+  >
+    <div className="px-2 pb-0.5 text-sm whitespace-nowrap overflow-hidden overflow-ellipsis">
+      {props.id}
+    </div>
+  </div>
+)
 
 export default SideListSchedule
