@@ -40,7 +40,7 @@ const Layout = ({ children }: Props) => {
         <footer>
           <div className='right-0 fixed'>
             <hr />
-            <span>I'm here (Footer)</span>
+            <span></span>
           </div>
         </footer>
 
