@@ -55,6 +55,11 @@ app.on('ready', async () => {
     mainWindow.close();
   });
 
+  ipcMain.on('windowStatus', (event) => {
+    const status = mainWindow.isMaximized() ? ('maximize') : ('restored')
+    event.sender.send('windowStatusResponse', status)
+  })
+
   // (Open dev tool) Recive from @Hooks\useInspectElement
   ipcMain.on('inspectElement', (event, args) => {
     const webContents = event.sender;

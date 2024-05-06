@@ -17,7 +17,7 @@ export default function SettingSystem() {
       <SettingItem
         title="Sync Server"
         text="(optional)Your sync data server"
-        children={<Toggle size="lg" checkedChildren="Enabled" unCheckedChildren="Disabled"/>}
+        children={<Toggle checkedChildren="Enabled" unCheckedChildren="Disabled"/>}
       />
       <SettingItem
         title="Sync Server Address"
@@ -32,13 +32,13 @@ export default function SettingSystem() {
       />
       <SettingItem
         title="Launch When Startup"
-        text="(optional)Your sync data server"
-        children={<Toggle size="lg" checkedChildren="Enabled" unCheckedChildren="Disabled"/>}
+        text=""
+        children={<Toggle checkedChildren="Enabled" unCheckedChildren="Disabled"/>}
       />
       <SettingItem
         title="When Click Close"
-        text="(optional)Your sync data server"
-        children={<Toggle size="lg" checkedChildren="Enabled" unCheckedChildren="Disabled"/>}
+        text=""
+        children={<Toggle checkedChildren="Enabled" unCheckedChildren="Disabled"/>}
       />
     </div>
   )

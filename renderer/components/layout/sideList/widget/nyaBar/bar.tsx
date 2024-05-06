@@ -15,12 +15,12 @@ const ProgressBar = (props: {type, per}) => {
           className="h-full rounded-sm"
           style={{
             backgroundColor: '#5a5a5a',
-            width: props.per
+            width: props.per * 0.85
           }}
         ></div>
       </div>
       <div className="flex pl-2 text-sm font-bold text-gray-500">
-        {props.type}: {props.per}
+        {props.type}: {props.per}%
       </div>
     </div>
   )

@@ -15,6 +15,14 @@ contextBridge.exposeInMainWorld('electronAPI', {
   windowMinimize: () => ipcRenderer.send('windowMinimize'),
   windowMaximize: () => ipcRenderer.send('windowMaximize'),
   windowClose: () => ipcRenderer.send('windowClose'),
+  windowStatus: () => {
+    return new Promise((resolve) => {
+      ipcRenderer.send('windowStatus');
+      ipcRenderer.once('windowStatusResponse', (_, status) => {
+        resolve(status);
+      });
+    });
+  },
   inspectElement: () => ipcRenderer.send('inspectElement'),
   send: (channel: string, data: any) => {
     const validChannels = ['windowMinimize','windowMaximize','windowClose','inspectElement']

@@ -6,17 +6,22 @@ const NyaTime = () => {
 
   useEffect(() => {
     const getUtcTime = () => {
-      const timeZones = ['UTC', 'America/New_York', 'Europe/London']
+      const timeZones = [
+        {'id': 'Asia/Shanghai', 'label': 'ShangHai'},
+        {'id': 'America/New_York', 'label': 'NYC, US'},
+        {'id': 'Europe/London', 'label': 'LDN, UK'},
+        {'id': 'UTC', 'label': 'UTC'}
+      ]
       const timeData = timeZones.map(timeZone => {
         const formatter = new Intl.DateTimeFormat('en-US', {
-          timeZone: timeZone,
+          timeZone: timeZone.id,
           hour12: false,
           hour: 'numeric',
           minute: 'numeric',
           second: 'numeric'
         });
         return {
-          timeZone: timeZone,
+          timeZone: timeZone.label,
           time: formatter.format(new Date())
         };
       });
@@ -30,10 +35,13 @@ const NyaTime = () => {
   }, []);
 
   return (
-    <div className='pt-6'>
+    <div className='pt-6 px-4'>
       <ul>
         {timeData.map(({ timeZone, time }) => (
-          <li key={timeZone}>
+          <li
+            key={timeZone}
+            className='flex justify-between py-0.5 mr-1'
+          >
             <strong>{timeZone}:</strong> {time}
           </li>
         ))}

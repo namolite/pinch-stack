@@ -56,6 +56,10 @@ electron_1.app.on('ready', async () => {
     electron_1.ipcMain.on('windowClose', () => {
         mainWindow.close();
     });
+    electron_1.ipcMain.on('windowStatus', (event) => {
+        const status = mainWindow.isMaximized() ? ('maximize') : ('restored');
+        event.sender.send('windowStatusResponse', status);
+    });
     // (Open dev tool) Recive from @Hooks\useInspectElement
     electron_1.ipcMain.on('inspectElement', (event, args) => {
         const webContents = event.sender;
