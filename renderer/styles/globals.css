@@ -194,6 +194,33 @@ h6 { font-size: 1.1rem }
   animation: rotate 4s linear infinite;
 }
 
+.font-poppin {
+  font-family: 'Poppins', Arial, sans-serif;
+}
+
+.font-mont {
+  font-family: 'Montserrat', Arial, sans-serif;
+}
+
+.font-lato {
+  font-family: 'Lato', Arial, sans-serif;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('/fonts/Lato-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url(/fonts/);
+}
+
 
 /* workbench */
 .block {

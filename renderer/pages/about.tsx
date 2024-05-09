@@ -32,10 +32,6 @@ const AboutPage = () => {
     <div className='overflow-visible'>
       <Editor />
     </div>
-    <p>
-      <Link href="/">Go home</Link>
-    </p>
-    <button onClick={console.log}>snapshot</button>
   </>)
 }
 

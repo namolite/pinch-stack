@@ -84,7 +84,6 @@ const Sidebar = () => {
   const newDoc = () => {
     const doc = provider.collection.createDoc()
     doc.load(() => {
-      // 添加初始块元素
       const rootId = doc.addBlock('affine:page', {});
       doc.addBlock('affine:surface', {}, rootId);
       const noteId = doc.addBlock('affine:note', {}, rootId);

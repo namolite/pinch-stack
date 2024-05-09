@@ -69,18 +69,7 @@ const MinIcon = () => (
 const MaxIcon = (props: { status: 'maximize' | 'restored' }) => (
   <div className="flex h-full w-14 items-center justify-center hover:bg-gray-200">
     {
-      (props.status === 'restored') ? (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="1.2em" height="1.2em"
-          viewBox="0 0 24 24"
-        >
-          <path
-            fill="currentColor"
-            d="M6 3h12a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3m0 2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1z"
-          ></path>
-        </svg>
-      ) : (
+      (props.status === 'maximize') ? (
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="1.2em" height="1.2em"
@@ -91,11 +80,21 @@ const MaxIcon = (props: { status: 'maximize' | 'restored' }) => (
             d="M9 4a1 1 0 0 0-2 0v2.5a.5.5 0 0 1-.5.5H4a1 1 0 0 0 0 2h2.5A2.5 2.5 0 0 0 9 6.5zm0 16a1 1 0 1 1-2 0v-2.5a.5.5 0 0 0-.5-.5H4a1 1 0 1 1 0-2h2.5A2.5 2.5 0 0 1 9 17.5zm7-17a1 1 0 0 0-1 1v2.5A2.5 2.5 0 0 0 17.5 9H20a1 1 0 1 0 0-2h-2.5a.5.5 0 0 1-.5-.5V4a1 1 0 0 0-1-1m-1 17a1 1 0 1 0 2 0v-2.5a.5.5 0 0 1 .5-.5H20a1 1 0 1 0 0-2h-2.5a2.5 2.5 0 0 0-2.5 2.5z"
           ></path>
         </svg>
+      ) : (
+        <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1.2em" height="1.2em"
+        viewBox="0 0 24 24"
+      >
+        <path
+          fill="currentColor"
+          d="M6 3h12a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3m0 2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1z"
+        ></path>
+      </svg>
       )
     }
   </div>
 )
-
 
 const CloseIcon = () => (
   <div className="flex h-full w-14 items-center justify-center hover:bg-gray-200">

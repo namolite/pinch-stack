@@ -77,6 +77,7 @@ const SideListSchedule = () => {
   const viewList = () => {
     console.log(Array.from(provider!.collection!.docs.values()))
   }
+  const ld = 'a'
 
   // FIXME: Auto Renderer When Data Update
   return (
@@ -87,7 +88,9 @@ const SideListSchedule = () => {
         </div>
         {
           loading ? (
-            <div>Loading...</div>
+            <div className="flex w-full h-20 items-center justify-center">
+              <Loader className=" items-center justify-center" content="Loading..." vertical />
+            </div>
           ) : (docs.map((doc, index) => (
             <div
               className={`doc-item ${editor?.doc === doc ? 'doc-active' : ''} flex items-center my-1 py-1 doc-bar`}
@@ -115,9 +118,6 @@ const SideListSchedule = () => {
         <DocMenuOpion id={'New Docment'} hook={newDoc} />
         <DocMenuOpion id={'Remove Document'} hook={removeDoc} />
         <DocMenuOpion id={'View List'} hook={viewList} />
-      </div>
-      <div className="flex w-full min-h-full items-center justify-center">
-        <Loader className=" items-center justify-center" content="Loading..." vertical />
       </div>
     </div>
   )
