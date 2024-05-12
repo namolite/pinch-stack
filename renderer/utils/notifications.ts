@@ -1,15 +1,16 @@
+
 // TODO Feature: notifications off
 const mute = () => {
   let importClientSetting: object = {}
 }
 
 // TODO Feature: notification output function
-const notification = (notificationTitle: string, notificationBody: string, terminalMessage: string) => {
+const notification = (notificationTitle: string, notificationBody: string, terminalMessage: string, notificationIcon: string) => {
   return () => {
     // const tt = 'Your change has already saved'
     // const bd = 'Notification from the Renderer process'
     // const msg = 'Pinch Stack'
-    new window.Notification(notificationTitle, { body: notificationBody })
+    new window.Notification(notificationTitle, { body: notificationBody, icon: notificationIcon })
     // .onclick = () => { document.getElementById('output').innerText = terminalMessage }
   }
 }

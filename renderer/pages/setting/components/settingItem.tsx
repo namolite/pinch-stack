@@ -39,4 +39,7 @@ const SettingInput = () => {
   )
 }
 
+const FooBar = () => <></>
+
+export default FooBar
 export { SettingTitle, SettingItem, SettingInput }

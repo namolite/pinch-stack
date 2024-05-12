@@ -133,6 +133,10 @@
   background-color: var(--mainpage-inner-background);
 }
 
+.menuClose:hover {
+  background-color: rgba(255, 75, 75, 0.5);
+}
+
 
 /* main & duplicate styles */
 html {

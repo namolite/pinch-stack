@@ -12,6 +12,7 @@ import { download } from 'electron-dl'
 import electronDl from 'electron-dl'
 
 // Prepare the renderer once the app is ready
+app.setName('Pinch Stack')
 app.on('ready', async () => {
   await prepareNext('./renderer')
 

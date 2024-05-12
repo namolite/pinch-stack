@@ -14,6 +14,7 @@ const electron_next_1 = __importDefault(require("electron-next"));
 const electron_dl_1 = require("electron-dl");
 const electron_dl_2 = __importDefault(require("electron-dl"));
 // Prepare the renderer once the app is ready
+electron_1.app.setName('Pinch Stack');
 electron_1.app.on('ready', async () => {
     await (0, electron_next_1.default)('./renderer');
     const mainWindow = new electron_1.BrowserWindow({

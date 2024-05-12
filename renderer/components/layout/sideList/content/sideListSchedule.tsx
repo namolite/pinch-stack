@@ -77,7 +77,6 @@ const SideListSchedule = () => {
   const viewList = () => {
     console.log(Array.from(provider!.collection!.docs.values()))
   }
-  const ld = 'a'
 
   // FIXME: Auto Renderer When Data Update
   return (
@@ -115,7 +114,7 @@ const SideListSchedule = () => {
         </div>
         <DocMenuOpion id={'Export'} hook={handleExport} />
         <DocMenuOpion id={'Sync'} hook={handleImport} />
-        <DocMenuOpion id={'New Docment'} hook={newDoc} />
+        <DocMenuOpion id={'New Document'} hook={newDoc} />
         <DocMenuOpion id={'Remove Document'} hook={removeDoc} />
         <DocMenuOpion id={'View List'} hook={viewList} />
       </div>

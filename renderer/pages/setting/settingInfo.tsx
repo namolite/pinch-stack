@@ -1,8 +1,19 @@
+import { useAtom } from "jotai"
+import { useState, useEffect } from "react"
+
 import Auth from "@Components/auth"
 import { Link, Time, Title } from '@Components/resource/settingIco'
+import { authAtom } from "@Utils/states"
 // <Auth />
 
 export default function SettingInfo() {
+  const [logined, setLogined] = useState(null)
+  const [loginedState] = useAtom(authAtom)
+
+  useEffect(() => {
+    setLogined(loginedState);
+  }, [loginedState]);
+
   const data = {
     'avatar': 'default',
     'username': 'Violetta',
@@ -16,7 +27,7 @@ export default function SettingInfo() {
     'description': 'Greetings. I\'m Violetta, a 15-year-old girl loving baking, drawing, mysticism, and Onii-chan. If you need help, I suppose I could lend a paw, nya~'
   }
 
-  return (
+  return ((logined === 'logined') ? (
     <div className="p-6">
       <div>
         <div className="w-20 h-20">
@@ -60,5 +71,7 @@ export default function SettingInfo() {
         </div>
       </div>
     </div>
-  )
+  ) : (
+    <Auth />
+  ))
 }

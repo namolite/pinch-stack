@@ -15,7 +15,7 @@ export default function Auth() {
   return (
     <div>
       {authState === 'logined' ? (
-        <>logined</>
+        <></>
       ) : (
         <div>
           <div className="mask"></div>
@@ -32,7 +32,6 @@ export default function Auth() {
                 <RegisterForm
                   host={host}
                 />
-
               </>
             )}
           </div>

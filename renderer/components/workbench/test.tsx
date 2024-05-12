@@ -1,3 +1,4 @@
+//@ts-ignore
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 
@@ -48,7 +49,7 @@ const IndexInner = () => {
       <br />
       <Link href="/about">link</Link>
       <br />
-      <button onClick={notification('Title', 'Text', 'Terminal output')}>notification</button>
+      <button onClick={notification('测试标题', '测试内容', 'Terminal output', '/images/icons/pinch.png')}>notification</button>
       <div className='flex block-3'>
         <BlockContent props={dummyData} />
         <BlockSplit />

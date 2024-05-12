@@ -19,3 +19,5 @@ export const docListDataAtom = atom({
   provider: null,
   editor: null
 })
+
+export const loginedAtom = atom<string>('i')
