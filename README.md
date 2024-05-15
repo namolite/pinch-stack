@@ -18,6 +18,18 @@ Download the executable file from [releases](https://github.com/namolite/pinch-s
 
 
 
+## Update
+
+- [ ] Online status
+- [ ] Document export to md, pdf
+- [ ] Setting json file
+- [ ] Direct message
+- [ ] Calendar setting
+- [ ] Utils Manager
+- [ ] Google calendar sync
+
+
+
 ## Copyright Information
 
 The code of this repo is released under the MIT license, but includes code from third-party contents.
